@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="comprovar.xsd">
+	<grup codi="DAM1">
+		<nom>1er Desenvolupament d'aplicacions multiplataforma</nom>
+		<alumnes>
+			<alumne>
+				<nom>Alberto</nom>
+				<cognoms>Bueno Miera</cognoms>
+				<edat>22</edat>
+				<confinament>
+					<motiu>Positiu</motiu>
+					<Data_inici_confinament>19/09/2020</Data_inici_confinament>
+					<Dies_confinament>14</Dies_confinament>
+				</confinament>
+			</alumne>
+			<alumne>
+				<nom>Miguel Angel</nom>
+				<cognoms>Turdo Senarriaga</cognoms>
+				<edat>24</edat>
+				<confinament>
+					<motiu>Contacte</motiu>
+					<Data_inici_confinament>20/10/2020</Data_inici_confinament>
+					<Dies_confinament>10</Dies_confinament>
+				</confinament>
+			</alumne>
+		</alumnes>
+	</grup>
+	<grup codi="SMX1">
+		<nom>1er Sistemes microinformàtics i xarxes</nom>
+		<alumnes>
+			<alumne>
+				<nom>Jesus</nom>
+				<cognoms>Jimenez Zorriqueta</cognoms>
+				<edat>15</edat>
+				<confinament>
+					<motiu>Contacte</motiu>
+					<Data_inici_confinament>12/09/2020</Data_inici_confinament>
+					<Dies_confinament>14</Dies_confinament>
+				</confinament>
+			</alumne>
+			<alumne>
+				<nom>Vanesa</nom>
+				<cognoms>Perrote Varela</cognoms>
+				<edat>16</edat>
+				<confinament>
+					<motiu>Contacte</motiu>
+					<Data_inici_confinament>24/09/2020</Data_inici_confinament>
+					<Dies_confinament>10</Dies_confinament>
+				</confinament>
+			</alumne>
+		</alumnes>
+	</grup>
+	<grup codi="SMX2">
+		<nom>2on Sistemes microinformàtics i xarxes</nom>
+		<alumnes>
+			<alumne>
+				<nom>Vicente</nom>
+				<cognoms>Lafuente Tevenet</cognoms>
+				<edat>16</edat>
+				<confinament>
+					<motiu>Positiu</motiu>
+					<Data_inici_confinament>18/09/2020</Data_inici_confinament>
+					<Dies_confinament>14</Dies_confinament>
+				</confinament>
+			</alumne>
+		</alumnes>
+	</grup>
+</grups>

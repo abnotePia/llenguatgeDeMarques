@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moduls xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="comprovar.xsd">
+	<modul numero="1">
+		<nom>Sistemes informàtics</nom>
+		<hores-minimes>132</hores-minimes>
+		<hores-lliure-disposicio />
+		<hores-totals>132</hores-totals>
+		<unitats-formatives>
+			<unitat-formativa numero="1">
+				<nom>Instal·lació, configuració i explotació del sistema informàtic</nom>
+				<hores>49</hores>
+			</unitat-formativa>
+			<unitat-formativa numero="2">
+				<nom>Gestió de la informació i de recursos en una xarxa</nom>
+				<hores>69</hores>
+			</unitat-formativa>
+			<unitat-formativa numero="3">
+				<nom>Implantació de programari específic</nom>
+				<hores>14</hores>
+			</unitat-formativa>
+		</unitats-formatives>
+		<docents>
+			<docent>
+				<nom>Albert</nom>
+				<cognoms>Terrones Muñoz</cognoms>
+				<email>albert.terrones@mataro.epiaedu.cat</email>
+			</docent>
+		</docents>
+	</modul>
+	<modul numero="2">
+		<nom>Bases de dades</nom>
+		<hores-minimes>165</hores-minimes>
+		<hores-lliure-disposicio />
+		<hores-totals>165</hores-totals>
+		<unitats-formatives>
+			<unitat-formativa numero="1">
+				<nom>Introducció a les bases de dades</nom>
+				<hores>25</hores>
+			</unitat-formativa>
+			<unitat-formativa numero="2">
+				<nom>Llenguatges SQL: DML i DDL</nom>
+				<hores>58</hores>
+			</unitat-formativa>
+			<unitat-formativa numero="3">
+				<nom>Llenguatges SQL: DCL i extensió procedimental. SGBD corporatiu</nom>
+				<hores>66</hores>
+			</unitat-formativa>
+			<unitat-formativa numero="4">
+				<nom>Bases de dades objecte-relacionals</nom>
+				<hores>16</hores>
+			</unitat-formativa>
+		</unitats-formatives>
+		<docents>
+			<docent>
+				<nom>Rafael</nom>
+				<cognoms>Fernández Domínguez</cognoms>
+				<email>rafael.fernandez@mataro.epiaedu.cat</email>
+			</docent>
+			<docent>
+				<cognoms>Martínez Castilla</cognoms>
+				<nom>Rubén</nom>
+				<email>ruben.martinez@mataro.epiaedu.cat</email>
+			</docent>
+		</docents>
+	</modul>
+	<modul numero="3">
+		<nom>Programació.</nom>
+		<hores-minimes>198</hores-minimes>
+		<hores-lliure-disposicio>33</hores-lliure-disposicio>
+		<hores-totals>231</hores-totals>
+		<unitats-formatives>
+			<unitat-formativa numero="1">
+				<nom>Programació estructurada</nom>
+				<hores>74</hores>
+			</unitat-formativa>
+			<unitat-formativa numero="2">
+				<nom>Disseny modular</nom>
+				<hores>39</hores>
+			</unitat-formativa>
+			<unitat-formativa numero="3">
+				<nom>Fonaments de gestió de fitxers</nom>
+				<hores>19</hores>
+			</unitat-formativa>
+			<unitat-formativa numero="4">
+				<nom>Programació orientada a objectes. Fonaments</nom>
+				<hores>24</hores>
+			</unitat-formativa>
+			<unitat-formativa numero="5">
+				<nom>POO. Llibreries de classes fonamentals</nom>
+				<hores>24</hores>
+			</unitat-formativa>
+			<unitat-formativa numero="6">
+				<nom>POO. Introducció a la persistència en BD</nom>
+				<hores>18</hores>
+			</unitat-formativa>
+		</unitats-formatives>
+		<docents>
+			<docent>
+				<email>carles.bonet@mataro.epiaedu.cat</email>
+				<nom>Carles</nom>
+				<cognoms>Bonet</cognoms>
+			</docent>
+			<docent>
+				<email>isabel.bosch@mataro.epiaedu.cat</email>
+				<cognoms>Bosch millastre</cognoms>
+				<nom>Isabel</nom>
+			</docent>
+		</docents>
+	</modul>
+	<modul numero="4">
+		<nom>Llenguatges de marques i sistemes de gestió d’informació</nom>
+		<hores-minimes>99</hores-minimes>
+		<hores-lliure-disposicio />
+		<hores-totals>99</hores-totals>
+		<unitats-formatives>
+			<unitat-formativa numero="1">
+				<nom>Programació amb XML</nom>
+				<hores>45</hores>
+			</unitat-formativa>
+			<unitat-formativa numero="2">
+				<nom>Àmbits d’aplicació de l’XML</nom>
+				<hores>27</hores>
+			</unitat-formativa>
+			<unitat-formativa numero="3">
+				<nom>Sistemes de gestió d’informació empresarial</nom>
+				<hores>27</hores>
+			</unitat-formativa>
+		</unitats-formatives>
+		<docents>
+			<docent>
+				<cognoms>Martínez Castilla</cognoms>
+				<email>ruben.martinez@mataro.epiaedu.cat</email>
+				<nom>Rubén</nom>
+			</docent>
+		</docents>
+	</modul>
+	<modul numero="11">
+		<nom>Formació i orientació laboral</nom>
+		<hores-minimes>66</hores-minimes>
+		<hores-lliure-disposicio />
+		<hores-totals>66</hores-totals>
+		<unitats-formatives>
+			<unitat-formativa numero="1">
+				<nom>Incorporació al treball</nom>
+				<hores>33</hores>
+			</unitat-formativa>
+			<unitat-formativa numero="2">
+				<nom>Prevenció de riscos laborals</nom>
+				<hores>33</hores>
+			</unitat-formativa>
+		</unitats-formatives>
+		<docents>
+			<docent>
+				<cognoms>Montoro del valle</cognoms>
+				<nom>Lourdes</nom>
+				<email>lourdes.montoro@mataro.epiaedu.cat</email>
+			</docent>
+		</docents>
+	</modul>
+	<modul numero="12">
+		<nom>Empresa i iniciativa emprenedora</nom>
+		<hores-minimes>66</hores-minimes>
+		<hores-lliure-disposicio />
+		<hores-totals>66</hores-totals>
+		<unitats-formatives>
+			<unitat-formativa numero="1">
+				<nom>Empresa i iniciativa emprenedora</nom>
+				<hores>66</hores>
+			</unitat-formativa>
+		</unitats-formatives>
+		<docents>
+			<docent>
+				<nom>Laia</nom>
+				<cognoms>Vilà Batlle</cognoms>
+				<email>laia.vilab@mataro.epiaedu.cat</email>
+			</docent>
+		</docents>
+	</modul>
+</moduls>

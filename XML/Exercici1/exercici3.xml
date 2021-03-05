@@ -1,0 +1,226 @@
+<instagram>
+	<usuaris>
+		<usuari id="123">
+			<publicacions>
+				<publicacio>
+					<data>
+						<dia>1</dia>
+						<mes>2</mes>
+						<any>2020</any>
+						<hora>17:56</hora>
+					</data>
+					<imagenes>
+						<imagen>2020-02-01-1756-123.jpg</imagen>
+					</imagenes>
+					<comentari>
+						<contingut>Vive la experiencia completa con el nuevo iphone</contingut>
+						<referencies_altres_usuaris>
+							<referencia>@isenacode</referencia>
+							<referencia>@apple</referencia>
+						</referencies_altres_usuaris>
+					</comentari>
+					<likes>600</likes>
+					<comentaris_altres_usuaris>
+						<usuari id="321">
+							<comentari>
+								<contingut>Que ganas de tener el nuevo iphone 9000</contingut>
+								<data>
+									<dia>2</dia>
+									<mes>2</mes>
+									<any>2020</any>
+									<hora>14:56</hora>
+								</data>
+								<likes>20</likes>
+							</comentari>
+						</usuari>
+						<usuari id="231">
+							<comentari>
+								<contingut>¿Cual sera su precio?</contingut>
+								<data>
+									<dia>2</dia>
+									<mes>2</mes>
+									<any>2020</any>
+									<hora>14:53</hora>
+								</data>
+								<likes>20</likes>
+							</comentari>
+						</usuari>
+						<usuari id="345">
+							<comentari>
+								<contingut>Algunas fuentes asseguran que no costara más de 3000 euros, que alegría</contingut>
+								<data>
+									<dia>2</dia>
+									<mes>2</mes>
+									<any>2020</any>
+									<hora>14:52	</hora>
+								</data>
+								<likes>400</likes>
+							</comentari>
+						</usuari>
+					</comentaris_altres_usuaris>
+				</publicacio>
+				
+				<publicacio>
+					<data>
+						<dia>5</dia>
+						<mes>12</mes>
+						<any>2019</any>
+						<hora>15:23</hora>
+					</data>
+					<video>2019-12-05-1523-123.mp4</video>
+					<comentari>
+						<contingut>¡Nueva presentación de CPU de decima generación!</contingut>
+						<referencies_altres_usuaris>
+							<referencia>@Intel</referencia>
+							<referencia>@Amd</referencia>
+						</referencies_altres_usuaris>
+					</comentari>
+					<reproduccions>10</reproduccions>
+					<comentaris_altres_usuaris>
+						<usuari id ="288">
+							<comentari>
+								<contingut>Haber que tan buenos son</contingut>
+								<data>
+									<dia>6</dia>
+									<mes>12</mes>
+									<any>2019</any>
+									<hora>14:52	</hora>
+								</data>
+								<likes>3</likes>
+							</comentari>
+						</usuari>
+					</comentaris_altres_usuaris>
+				</publicacio>
+				<publicacio>
+					<data>
+						<dia>23</dia>
+						<mes>11</mes>
+						<any>2019</any>
+						<hora>23:59</hora>
+					</data>
+					<imagenes>
+						<imagen>2019-11-23-2359-123.jpg</imagen>
+						<imagen>2019-11-23-2358-123.jpg</imagen>
+					</imagenes>
+					<comentari>
+						<contingut>Buscad las 30 diferencias entre las imagenes</contingut>
+						<referencies_altres_usuaris/>
+					</comentari>
+					<likes>5</likes>
+					<comentaris_altres_usuaris>
+						<usuari id="239">
+							<comentari>
+								<contingut>Yo solo he encontrado 10 diferencias, es demasiado difícil</contingut>
+								<data>
+									<dia>24</dia>
+									<mes>11</mes>
+									<any>2019</any>
+									<hora>7:00</hora>
+								</data>
+								<likes>2</likes>
+							</comentari>
+						</usuari>
+						<usuari id="666">
+							<comentari>
+								<contingut>Al final he podido encontrar todas las diferencias</contingut>
+								<data>
+									<dia>24</dia>
+									<mes>11</mes>
+									<any>2019</any>
+									<hora>22:00</hora>
+								</data>
+								<likes>1</likes>
+							</comentari>
+						</usuari>
+					</comentaris_altres_usuaris>
+				</publicacio>
+				
+				<publicacio>
+					<data>
+						<dia>12</dia>
+						<mes>9</mes>
+						<any>2018</any>
+						<hora>21:00</hora>
+					</data>
+					<comentari>
+						<contingut>Como dijo Tomas A.Edison:"El valor de una idea radica en el uso de la misma"</contingut>
+						<referencies_altres_usuaris>
+							<referencia>@cientificos</referencia>
+							<referencia>@inventor_bombilla</referencia>
+						</referencies_altres_usuaris>
+					</comentari>
+					<likes/>
+					<comentaris_altres_usuaris/>
+				</publicacio>
+			
+				<publicacio>
+					<data>
+						<dia>2</dia>
+						<mes>4</mes>
+						<any>2017</any>
+						<hora>22:58</hora>
+					</data>
+					<comentari>
+						<contingut>Adios ESO, hola Bachillerato</contingut>
+						<referencies_altres_usuaris>
+							<referencia>@vedrunamalgrat</referencia>
+							<referencia>@ramonturro</referencia>
+							<referencia>@colegiosEsp</referencia>
+						</referencies_altres_usuaris>
+					</comentari>
+					<likes>999</likes>
+					<comentaris_altres_usuaris>
+						<usuari id="431">
+							<comentari>
+								<contingut>¡Por fin la generación del 2002 ha podido dejar la ESO!</contingut>
+								<data>
+									<dia>3</dia>
+									<mes>4</mes>
+									<any>2017</any>
+									<hora>22:00</hora>
+								</data>
+								<likes>567</likes>
+							</comentari>
+						</usuari>
+						<usuari id="386">
+							<comentari>
+								<contingut>No hay descanso, ahora toca bachilerato y después universidad</contingut>
+								<data>
+									<dia>4</dia>
+									<mes>4</mes>
+									<any>2017</any>
+									<hora>23:51</hora>
+								</data>
+								<likes>110</likes>
+							</comentari>
+						</usuari>
+						<usuari id="935">
+							<comentari>
+								<contingut>Tu puedes, muchos animos!!!!!</contingut>
+								<data>
+									<dia>5</dia>
+									<mes>4</mes>
+									<any>2017</any>
+									<hora>22:00</hora>
+								</data>
+								<likes>435</likes>
+							</comentari>
+						</usuari>
+						<usuari id="769">
+							<comentari>
+								<contingut>Si quieres te vendo los libros, hablamos por privado</contingut>
+								<data>
+									<dia>9</dia>
+									<mes>6</mes>
+									<any>2017</any>
+									<hora>22:00</hora>
+								</data>
+								<likes>1</likes>
+							</comentari>
+						</usuari>
+					</comentaris_altres_usuaris>
+				</publicacio>
+			</publicacions>
+		</usuari>
+	</usuaris>
+</instagram>

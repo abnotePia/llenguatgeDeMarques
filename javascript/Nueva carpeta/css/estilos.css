@@ -1,0 +1,12 @@
+div#panel td {
+	cursor: pointer;
+}
+
+h1#contador {
+	font-size: 10em;
+}
+
+img#anadir {
+	width: 5%;
+	cursor: pointer;
+}

@@ -1,0 +1,466 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Buscaminas</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body class="bg-danger">
+
+    <div class="container">
+
+		<div class="row" id="ubicaciones">
+			<div class="col-12">
+				<h3 class="text-center text-white my-5 pb-2 border-bottom border-white">Coloca las bombas</h3>
+			</div>
+			<div class="col-6 offset-3">
+				
+				<form>
+					<div class="form-group row pb-2 border-bottom border-warning">
+						<label class="col-4 font-weight-bold text-warning text-warning">Ubicación bomba 1</label>
+						<label for="fila-bomba-1" class="col-2 text-right text-white-50">Fila</label>
+						<div class="col-2">
+							<input type="number" class="form-control form-control-sm text-center text-danger" min="0" max="9" value="0" id="fila-bomba-1">
+						</div>
+						<label for="columna-bomba-1" class="col-2 text-right text-white-50">Columna</label>
+						<div class="col-2">
+							<input type="number" class="form-control form-control-sm text-center text-danger" min="0" max="9" value="0" id="columna-bomba-1">
+						</div>
+					</div>
+					<div class="form-group row pb-2 border-bottom border-warning">
+						<label class="col-4 font-weight-bold text-warning">Ubicación bomba 2</label>
+						<label for="fila-bomba-2" class="col-2 text-right text-white-50">Fila</label>
+						<div class="col-2">
+							<input type="number" class="form-control form-control-sm text-center text-danger" min="0" max="9" value="0" id="fila-bomba-2">
+						</div>
+						<label for="columna-bomba-2" class="col-2 text-right text-white-50">Columna</label>
+						<div class="col-2">
+							<input type="number" class="form-control form-control-sm text-center text-danger" min="0" max="9" value="0" id="columna-bomba-2">
+						</div>
+					</div>
+					<div class="form-group row pb-2 border-bottom border-warning">
+						<label class="col-4 font-weight-bold text-warning">Ubicación bomba 3</label>
+						<label for="fila-bomba-3" class="col-2 text-right text-white-50">Fila</label>
+						<div class="col-2">
+							<input type="number" class="form-control form-control-sm text-center text-danger" min="0" max="9" value="0" id="fila-bomba-3">
+						</div>
+						<label for="columna-bomba-3" class="col-2 text-right text-white-50">Columna</label>
+						<div class="col-2">
+							<input type="number" class="form-control form-control-sm text-center text-danger" min="0" max="9" value="0" id="columna-bomba-3">
+						</div>
+					</div>
+					<div class="form-group row pb-2 border-bottom border-warning">
+						<label class="col-4 font-weight-bold text-warning">Ubicación bomba 4</label>
+						<label for="fila-bomba-4" class="col-2 text-right text-white-50">Fila</label>
+						<div class="col-2">
+							<input type="number" class="form-control form-control-sm text-center text-danger" min="0" max="9" value="0" id="fila-bomba-4">
+						</div>
+						<label for="columna-bomba-4" class="col-2 text-right text-white-50">Columna</label>
+						<div class="col-2">
+							<input type="number" class="form-control form-control-sm text-center text-danger" min="0" max="9" value="0" id="columna-bomba-4">
+						</div>
+					</div>
+					<div class="form-group row pb-2 border-bottom border-warning">
+						<label class="col-4 font-weight-bold text-warning">Ubicación bomba 5</label>
+						<label for="fila-bomba-5" class="col-2 text-right text-white-50">Fila</label>
+						<div class="col-2">
+							<input type="number" class="form-control form-control-sm text-center text-danger" min="0" max="9" value="0" id="fila-bomba-5">
+						</div>
+						<label for="columna-bomba-5" class="col-2 text-right text-white-50">Columna</label>
+						<div class="col-2">
+							<input type="number" class="form-control form-control-sm text-center text-danger" min="0" max="9" value="0" id="columna-bomba-5">
+						</div>
+					</div>
+					<div class="form-group row pb-2 border-bottom border-warning">
+						<label class="col-4 font-weight-bold text-warning">Ubicación bomba 6</label>
+						<label for="fila-bomba-6" class="col-2 text-right text-white-50">Fila</label>
+						<div class="col-2">
+							<input type="number" class="form-control form-control-sm text-center text-danger" min="0" max="9" value="0" id="fila-bomba-6">
+						</div>
+						<label for="columna-bomba-6" class="col-2 text-right text-white-50">Columna</label>
+						<div class="col-2">
+							<input type="number" class="form-control form-control-sm text-center text-danger" min="0" max="9" value="0" id="columna-bomba-6">
+						</div>
+					</div>
+					<div class="form-group row pb-2 border-bottom border-warning">
+						<label class="col-4 font-weight-bold text-warning">Ubicación bomba 7</label>
+						<label for="fila-bomba-7" class="col-2 text-right text-white-50">Fila</label>
+						<div class="col-2">
+							<input type="number" class="form-control form-control-sm text-center text-danger" min="0" max="9" value="0" id="fila-bomba-7">
+						</div>
+						<label for="columna-bomba-7" class="col-2 text-right text-white-50">Columna</label>
+						<div class="col-2">
+							<input type="number" class="form-control form-control-sm text-center text-danger" min="0" max="9" value="0" id="columna-bomba-7">
+						</div>
+					</div>
+					<div class="form-group row pb-2 border-bottom border-warning">
+						<label class="col-4 font-weight-bold text-warning">Ubicación bomba 8</label>
+						<label for="fila-bomba-8" class="col-2 text-right text-white-50">Fila</label>
+						<div class="col-2">
+							<input type="number" class="form-control form-control-sm text-center text-danger" min="0" max="9" value="0" id="fila-bomba-8">
+						</div>
+						<label for="columna-bomba-8" class="col-2 text-right text-white-50">Columna</label>
+						<div class="col-2">
+							<input type="number" class="form-control form-control-sm text-center text-danger" min="0" max="9" value="0" id="columna-bomba-8">
+						</div>
+					</div>
+					<div class="form-group row pb-2 border-bottom border-warning">
+						<label class="col-4 font-weight-bold text-warning">Ubicación bomba 9</label>
+						<label for="fila-bomba-9" class="col-2 text-right text-white-50">Fila</label>
+						<div class="col-2">
+							<input type="number" class="form-control form-control-sm text-center text-danger" min="0" max="9" value="0" id="fila-bomba-9">
+						</div>
+						<label for="columna-bomba-9" class="col-2 text-right text-white-50">Columna</label>
+						<div class="col-2">
+							<input type="number" class="form-control form-control-sm text-center text-danger" min="0" max="9" value="0" id="columna-bomba-9">
+						</div>
+					</div>
+					<div class="form-group row pb-2 border-bottom border-warning">
+						<label class="col-4 font-weight-bold text-warning">Ubicación bomba 10</label>
+						<label for="fila-bomba-10" class="col-2 text-right text-white-50">Fila</label>
+						<div class="col-2">
+							<input type="number" class="form-control form-control-sm text-center text-danger" min="0" max="9" value="0" id="fila-bomba-10">
+						</div>
+						<label for="columna-bomba-10" class="col-2 text-right text-white-50">Columna</label>
+						<div class="col-2">
+							<input type="number" class="form-control form-control-sm text-center text-danger" min="0" max="9" value="0" id="columna-bomba-10">
+						</div>
+					</div>
+					<div class="form-group text-right">
+						<img id="anadir" src="images/more.png" class="rounded float-left" alt="Añadir bombas" onmouseover="Porencima(this)" onmouseout="Porfuera(this)">
+						<button type="button" class="btn btn-warning text-danger" onclick="iniciar()">Iniciar partida</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+		<div class="row d-none" id="panel">
+			<div class="col-12">
+				<h3 class="text-center text-white my-5 pb-2 border-bottom border-white">Buscaminas</h3>
+			</div>
+			<div class="col-4">
+				<h3 class="text-center mt-5 text-white-50">!!Sólo faltan ...</h3>
+				<h1 class="text-center mt-5 text-warning" id="contador">90</h1>
+				<h3 class="text-center mt-5 text-white-50">... casillas!!</h3>
+			</div>
+			<div class="col-6 offset-1">
+				<table class="table table-bordered">
+					<tr>
+						<td></td>
+						<th class="active text-white-50 text-center">0</th>
+						<th class="active text-white-50 text-center">1</th>
+						<th class="active text-white-50 text-center">2</th>
+						<th class="active text-white-50 text-center">3</th>
+						<th class="active text-white-50 text-center">4</th>
+						<th class="active text-white-50 text-center">5</th>
+						<th class="active text-white-50 text-center">6</th>
+						<th class="active text-white-50 text-center">7</th>
+						<th class="active text-white-50 text-center">8</th>
+						<th class="active text-white-50 text-center">9</th>
+					</tr>
+					<tr>
+						<th class="active text-white-50 text-center">0</th>
+						<td class="text-center" id="casilla-00"></td>
+						<td class="text-center" id="casilla-01"></td>
+						<td class="text-center" id="casilla-02"></td>
+						<td class="text-center" id="casilla-03"></td>
+						<td class="text-center" id="casilla-04"></td>
+						<td class="text-center" id="casilla-05"></td>
+						<td class="text-center" id="casilla-06"></td>
+						<td class="text-center" id="casilla-07"></td>
+						<td class="text-center" id="casilla-08"></td>
+						<td class="text-center" id="casilla-09"></td>
+					</tr>
+					<tr>
+						<th class="active text-white-50 text-center">1</th>
+						<td class="text-center" id="casilla-10"></td>
+						<td class="text-center" id="casilla-11"></td>
+						<td class="text-center" id="casilla-12"></td>
+						<td class="text-center" id="casilla-13"></td>
+						<td class="text-center" id="casilla-14"></td>
+						<td class="text-center" id="casilla-15"></td>
+						<td class="text-center" id="casilla-16"></td>
+						<td class="text-center" id="casilla-17"></td>
+						<td class="text-center" id="casilla-18"></td>
+						<td class="text-center" id="casilla-19"></td>
+					</tr>
+					<tr>
+						<th class="active text-white-50 text-center">2</th>
+						<td class="text-center" id="casilla-20"></td>
+						<td class="text-center" id="casilla-21"></td>
+						<td class="text-center" id="casilla-22"></td>
+						<td class="text-center" id="casilla-23"></td>
+						<td class="text-center" id="casilla-24"></td>
+						<td class="text-center" id="casilla-25"></td>
+						<td class="text-center" id="casilla-26"></td>
+						<td class="text-center" id="casilla-27"></td>
+						<td class="text-center" id="casilla-28"></td>
+						<td class="text-center" id="casilla-29"></td>
+					</tr>
+					<tr>
+						<th class="active text-white-50 text-center">3</th>
+						<td class="text-center" id="casilla-30"></td>
+						<td class="text-center" id="casilla-31"></td>
+						<td class="text-center" id="casilla-32"></td>
+						<td class="text-center" id="casilla-33"></td>
+						<td class="text-center" id="casilla-34"></td>
+						<td class="text-center" id="casilla-35"></td>
+						<td class="text-center" id="casilla-36"></td>
+						<td class="text-center" id="casilla-37"></td>
+						<td class="text-center" id="casilla-38"></td>
+						<td class="text-center" id="casilla-39"></td>
+					</tr>
+					<tr>
+						<th class="active text-white-50 text-center">4</th>
+						<td class="text-center" id="casilla-40"></td>
+						<td class="text-center" id="casilla-41"></td>
+						<td class="text-center" id="casilla-42"></td>
+						<td class="text-center" id="casilla-43"></td>
+						<td class="text-center" id="casilla-44"></td>
+						<td class="text-center" id="casilla-45"></td>
+						<td class="text-center" id="casilla-46"></td>
+						<td class="text-center" id="casilla-47"></td>
+						<td class="text-center" id="casilla-48"></td>
+						<td class="text-center" id="casilla-49"></td>
+					</tr>
+					<tr>
+						<th class="active text-white-50 text-center">5</th>
+						<td class="text-center" id="casilla-50"></td>
+						<td class="text-center" id="casilla-51"></td>
+						<td class="text-center" id="casilla-52"></td>
+						<td class="text-center" id="casilla-53"></td>
+						<td class="text-center" id="casilla-54"></td>
+						<td class="text-center" id="casilla-55"></td>
+						<td class="text-center" id="casilla-56"></td>
+						<td class="text-center" id="casilla-57"></td>
+						<td class="text-center" id="casilla-58"></td>
+						<td class="text-center" id="casilla-59"></td>
+					</tr>
+					<tr>
+						<th class="active text-white-50 text-center">6</th>
+						<td class="text-center" id="casilla-60"></td>
+						<td class="text-center" id="casilla-61"></td>
+						<td class="text-center" id="casilla-62"></td>
+						<td class="text-center" id="casilla-63"></td>
+						<td class="text-center" id="casilla-64"></td>
+						<td class="text-center" id="casilla-65"></td>
+						<td class="text-center" id="casilla-66"></td>
+						<td class="text-center" id="casilla-67"></td>
+						<td class="text-center" id="casilla-68"></td>
+						<td class="text-center" id="casilla-69"></td>
+					</tr>
+					<tr>
+						<th class="active text-white-50 text-center">7</th>
+						<td class="text-center" id="casilla-70"></td>
+						<td class="text-center" id="casilla-71"></td>
+						<td class="text-center" id="casilla-72"></td>
+						<td class="text-center" id="casilla-73"></td>
+						<td class="text-center" id="casilla-74"></td>
+						<td class="text-center" id="casilla-75"></td>
+						<td class="text-center" id="casilla-76"></td>
+						<td class="text-center" id="casilla-77"></td>
+						<td class="text-center" id="casilla-78"></td>
+						<td class="text-center" id="casilla-79"></td>
+					</tr>
+					<tr>
+						<th class="active text-white-50 text-center">8</th>
+						<td class="text-center" id="casilla-80"></td>
+						<td class="text-center" id="casilla-81"></td>
+						<td class="text-center" id="casilla-82"></td>
+						<td class="text-center" id="casilla-83"></td>
+						<td class="text-center" id="casilla-84"></td>
+						<td class="text-center" id="casilla-85"></td>
+						<td class="text-center" id="casilla-86"></td>
+						<td class="text-center" id="casilla-87"></td>
+						<td class="text-center" id="casilla-88"></td>
+						<td class="text-center" id="casilla-89"></td>
+					</tr>
+					<tr>
+						<th class="active text-white-50 text-center">9</th>
+						<td class="text-center" id="casilla-90"></td>
+						<td class="text-center" id="casilla-91"></td>
+						<td class="text-center" id="casilla-92"></td>
+						<td class="text-center" id="casilla-93"></td>
+						<td class="text-center" id="casilla-94"></td>
+						<td class="text-center" id="casilla-95"></td>
+						<td class="text-center" id="casilla-96"></td>
+						<td class="text-center" id="casilla-97"></td>
+						<td class="text-center" id="casilla-98"></td>
+						<td class="text-center" id="casilla-99"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+    </div>
+
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>	
+    <script type="text/javascript">
+    	var Bombas=[];
+    	var Trepitjat=[];
+    	var casillas=100;
+    	var cont3=0;
+    	var cont2=10;
+    	var cont4=0;
+    	var numbombas=0;
+    	for (filas=0;filas<10;filas++){
+    		Bombas[filas]=[];
+    		Trepitjat[filas]=[];
+    		for (col=0;col<10;col++) {
+    			Bombas[filas][col]=false;
+    			Trepitjat[filas][col]=false;
+    		}
+
+    	}
+
+    	function Porencima(obj) {
+    		obj.src="images/more-2.png";
+
+    	}
+    	function Porfuera (obj) {
+    		obj.src="images/more.png";
+    	}
+    	document.getElementById("anadir").addEventListener("click",function() {
+    		let formulario=document.querySelectorAll("from");
+    		let boton=document.getElementById("anadir")
+    		let clonar=document.querySelectorAll("div");
+    		var clonado=clonar[4].cloneNode(true);
+			clonar[34].insertBefore(clonado,boton);
+			let labels=document.querySelectorAll("label");
+			cont2++;
+			labels[30+cont3].innerHTML="Ubicación bomba "+cont2;
+			cont3=cont3+3;
+			var inputs=document.querySelectorAll("input");
+    		inputs[20+cont4].id="fila-bomba-"+cont2;
+    		inputs[21+cont4].id="columna-bomba-"+cont2;
+			cont4+=2;
+    	})
+    	function iniciar() {
+    		
+    		for (cont=1;cont<=cont2;cont++) {
+    			let fila=document.getElementById("fila-bomba-"+cont).value;
+    			let colm=document.getElementById("columna-bomba-"+cont).value;
+    		
+    			
+    		if (fila<0 || fila=="") {
+    			alert("Valor de fila no valido")
+
+    		}
+    		if (colm<0 || colm=="") {
+    			alert("Valor de columna no valido")
+
+
+    		}
+
+    		else if (colm>=0 && colm<=9)
+    			if (fila>=0 &&fila<10 && Bombas[fila][colm]==false  ) {
+    			Bombas[fila][colm]=true;
+    			numbombas++;
+    			document.getElementById("ubicaciones").classList.add("d-none");
+    			document.getElementById("panel").classList.remove("d-none");
+    			}
+
+    	}
+    	casillas=casillas-numbombas;
+    	document.getElementById("contador").innerHTML=casillas;
+    	}
+    	var finaljoc=false
+    	var guanyat=false;
+    	for(cont=0;cont<101;cont++){
+    	let pos=document.querySelectorAll("td");
+    	pos[cont].addEventListener("click", function(obj){
+    		idfila=this.id.charAt(8);
+    		idcolumna=this.id.charAt(9);
+    		if (Bombas[idfila][idcolumna]==false && finaljoc==false && guanyat==false) {
+    			if (Trepitjat[idfila][idcolumna]==false) {
+    				Trepitjat[idfila][idcolumna]=true;
+    				this.className="bg-white";
+    				casillas--;
+    				document.getElementById("contador").innerHTML=casillas;
+    				let numBombas=comprovarBombas(idfila,idcolumna);
+    				this.innerHTML=numBombas;
+    				if (numBombas==0) {
+    					this.classList.add("text-success")
+    				}
+    				else if (numBombas<=2 ) {
+    					this.classList.add("text-warning")
+    				}
+    				else {
+    					this.classList.add("text-danger")
+    				}
+    			}
+
+    		}
+    		else {
+    			finaljoc=true;
+    			perdut(true);
+    		}
+    		if (casillas==0) {
+    			perdut(false);
+    		}
+    	});
+    	}
+    	function perdut() {
+    		let perduts=document.createElement("div");
+    		let imagen=document.createElement("img");
+    		if () {
+    		imagen.src="images/more.png"
+    		perduts.innerHTML="HAS PERDIDO"
+    	}
+    		let contenedor=document.querySelectorAll("div");
+    		console.log(contenedor)
+    		contenedor[0].appendChild(perduts)
+    		perduts.appendChild(imagen)
+    		document.getElementById("panel").classList.add("d-none");
+    	}
+    	function guanyat() {
+
+    	}
+
+    	function comprovarBombas(idfila,idcolumna) {
+    		let probafila=parseInt(idfila);
+    		let probacol=parseInt(idcolumna);
+    		cont=0;	
+ 						if (probafila==0) {
+ 						for (let i=probafila;i<=probafila+1;i++) {
+ 							for (let y=probacol-1;y<=probacol;y++) {
+ 								if (Bombas[i][y]==true) {
+ 									cont++;
+ 								}
+ 							}
+ 						}
+ 						}
+ 						else {
+
+ 						if (probafila!=9) {	
+ 							for (let i=probafila-1;i<=probafila+1;i++) {
+ 								for (let y=probacol-1;y<=probacol+1;y++) {
+ 									if (Bombas[i][y]==true) {
+ 										cont++;
+ 								
+ 									}
+ 								}
+ 							}
+ 					}
+	 					else {
+	 						
+	 						for (let i=probafila;i<=probafila;i++) {
+	 							for (let y=probacol-1;y<=probacol+1;y++) {
+	 								if (Bombas[i][y]==true) {
+	 									cont++;
+	 									
+	 								}
+	 							}
+	 						}
+	 					}
+ 					}
+    		return cont;
+    	}
+    </script>
+</body>
+</html>
