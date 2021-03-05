@@ -1,0 +1,71 @@
+﻿{
+    "factura": {
+        "numero": "001/2016",
+        "fecha": "2016-01-05",
+        "emisor": {
+            "razon-social": "Encarna Vales García",
+            "nif": "17000000A",
+            "domicilio": {
+                "direccion": "Calle Río de Janeiro",
+                "codigopostal": "50000",
+                "poblacion": "Zaragoza",
+                "provincia": "Zaragoza",
+                "pais": "España"
+            },
+            "telefono": "976543235",
+            "fax": "976564322",
+            "mail": "encarnavales@gmail.com"
+        },
+        "cliente": {
+            "razon-social": "Flor de Loto Servicios Personalizados SL",
+            "nif": "A08479297",
+            "domicilio": {
+                "direccion": "Calle Kyoto",
+                "codigopostal": "08021",
+                "poblacion": "Barcelona",
+                "provincia": "Barcelona",
+                "pais": "España"
+            },
+            "telefono": "938843234"
+        },
+        "conceptos": {
+            "concepto": [
+                {
+                    "cantidad": "1",
+                    "descripcion": "Diseño visual de landing web",
+                    "precio-unitario": "575.0",
+                    "importe-neto": "575.0",
+                    "iva": "21"
+                },
+                {
+                    "cantidad": "1",
+                    "descripcion": "Material gràfico y recursos",
+                    "precio-unitario": "100.0",
+                    "importe-neto": "100.0",
+                    "iva": "21"
+                },
+                {
+                    "cantidad": "1",
+                    "descripcion": "Formación al equipo de marketing",
+                    "precio-unitario": "340.0",
+                    "importe-neto": "340.0",
+                    "iva": "21"
+                }
+            ]
+        },
+        "total-iva": {
+            "iva-21": "213.15",
+            "iva-10": "",
+            "iva-4": ""
+        },
+        "datos-bancarios": {
+            "fecha-abono": "2016-01-07",
+            "importe": "1228.15",
+            "metodo-pago": "Transferencia",
+            "info-pago": {
+                "iban": "ES6200491234567834567890"
+            }
+        },
+        "total-factura": "1228.15"
+    }
+}

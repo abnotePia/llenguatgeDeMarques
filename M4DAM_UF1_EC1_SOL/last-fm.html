@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<meta charset="utf-8">
+		<title>LAST FM</title>
+		<link rel="icon" type="image/png" href="images/favicon3.png">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+	</head>
+	<body class="bg-inverse">
+		<div class="container mt-5">
+			<div class="row">
+				<div class="col-6 offset-3 p-3">
+					<h1 class="text-danger">LAST FM</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6 offset-3 p-3">
+					<form id="buscador" name="buscador">
+						<div class="form-group">
+							<input type="text" placeholder="nombre del artista" class="form-control" id="artista" name="artista">
+						</div>
+						<button type="button" class="btn btn-danger float-right" id="buscar" name="buscar">Buscar</button> 
+					</form>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-10 offset-1 mt-3">
+					<table class="table text-danger">
+						<thead>
+							<tr>
+								<th scope="col"></th>
+								<th scope="col">Álbum</th>
+								<th scope="col">Reproducciones</th>
+								<th scope="col"></th>
+							</tr>
+						</thead>
+						<tbody id="listado-albums">
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-3.5.1.slim.min.js"></script>
+	    <script src="js/popper.min.js"></script>
+	    <script src="js/bootstrap.min.js"></script>
+	    <script type="text/javascript">
+
+			async function getAlbums(artista) {
+			  let respuesta = await fetch("http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=" + artista + "&limit=10&api_key=c44765c7999c2b2a0266dfeb3e451df0&format=json");
+			  let datos = await respuesta.json();
+
+			  return datos.topalbums.album;
+			}
+
+	    	document.getElementById("buscar").addEventListener("click", async function() {
+	    		let artista = document.getElementById("artista").value;
+	    		let albums = await getAlbums(artista);
+
+	    		document.getElementById("listado-albums").innerHTML = "";
+	    		
+	    		for (let i = 0; i < albums.length; i++) {
+
+	    			let fila = document.createElement("tr");
+
+	    			let celda = document.createElement("td");
+	    			celda.innerHTML = '<img src="' + albums[i].image[0]['#text'] + '">';
+	    			fila.appendChild(celda);
+
+	    			celda = document.createElement("td");
+	    			celda.innerText = albums[i].name;
+	    			fila.appendChild(celda);
+
+	    			celda = document.createElement("td");
+	    			celda.innerText = albums[i].playcount;
+	    			fila.appendChild(celda);
+
+	    			celda = document.createElement("td");
+	    			celda.innerHTML = '<a href="' + albums[i].url + '">Ver álbum</a>';
+	    			fila.appendChild(celda);
+
+	    			document.getElementById("listado-albums").appendChild(fila);
+
+	    		}
+	    	});
+
+	    </script>
+	</body>
+</html>

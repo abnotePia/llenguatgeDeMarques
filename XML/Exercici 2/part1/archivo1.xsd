@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="moduls">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="modul" minOccurs="1" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="nom" type="xs:string"/>
+						<xs:element name="hores-minimes" type="xs:integer" minOccurs="0" default="0"/>
+						<xs:element name="hores-lliure-disposicio" type="xs:integer" minOccurs="0" default="0" />
+						<xs:element name="hores-totals">
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="33"/>
+									<xs:maxInclusive value="333"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						
+						<xs:element name="unitats-formatives" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="unitat-formativa" minOccurs="1" maxOccurs= "unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="nom" type="xs:string"/>
+												<xs:element name="hores" type="xs:integer"/>
+											</xs:sequence>
+											<xs:attribute name="numero" type="xs:integer" use="optional"/>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						
+						<xs:element name="docents">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="docent" minOccurs="1" maxOccurs="3">
+										<xs:complexType>
+											<xs:all>
+												<xs:element name="nom" type="xs:string"/>
+												<xs:element name="cognoms" type="xs:string"/>
+												<xs:element name="email">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:pattern value=".{1,20}@mataro.epiaedu.cat"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:element>
+											</xs:all>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+
+					</xs:sequence>
+					<xs:attribute name="numero" type="xs:integer" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+</xs:schema>

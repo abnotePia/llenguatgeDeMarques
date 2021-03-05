@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<meta charset="utf-8">
+		<title>Acceso</title>
+		<link rel="icon" type="image/png" href="images/favicon.png">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+	</head>
+	<body class="bg-faded">
+		<div class="container mt-5" id="contenedor">
+
+			<div class="row" id="row-titulo">
+				
+				<div class="col-6 offset-3 p-3 bg-success d-flex-column rounded-top" id="div-titulo">
+					
+					<img src="images/candado.png" class="w-25 d-flex mx-auto my-3" id="icono" alt="icono">
+					<h1 class="text-white text-center" id="titulo">Iniciar sesión</h1>
+
+				</div>
+			
+			</div>
+			
+			<div class="row" id="row-formulario">
+
+				<div class="col-6 offset-3 p-3 bg-success rounded-bottom" id="div-formulario">
+					
+					<form id="formulario" name="formulario" action="login.php" method="post">
+						
+						<div class="form-group" id="form-group-usuario">
+							<input type="text" class="form-control form-control-lg text-primary mx-auto my-3 w-75" id="usuario" name="usuario" placeholder="nombre de usuario" onfocus="part2(this)"  onblur="part21(this)">
+						</div>
+						
+						<div class="form-group" id="form-group-contrasena">
+							<input type="text" class="form-control form-control-lg text-primary mx-auto my-3 w-75" id="contrasena" name="contrasena" placeholder="contraseña" onfocus="part2(this)" onblur="part21(this)">
+						</div>
+						
+						<div class="form-check pl-4 w-75 mx-auto  my-3" id="form-group-recuperar">
+							<input type="checkbox" class="form-check-input" id="recuperar" name="recuperar" onclick="nocontra()">
+							<label class="text-muted" for="recuperar">No recuerdo la contraseña, necesito recuperarla</label>
+						</div>
+						
+						<div class="form-group w-75 mx-auto text-right" id="form-group-enviar">
+							<button type="button" class="btn btn-lg btn-primary mb-3" id="enviar" name="enviar" style="opacity: 0.6;" onmouseover="porenzima()" onmouseout="porenzimafuera()">Enviar</button>
+						</div>
+						
+					</form>
+
+				</div>
+
+			</div>
+
+		</div>
+		<script src="js/jquery-3.5.1.slim.min.js"></script>
+	    <script src="js/popper.min.js"></script>
+	    <script src="js/bootstrap.min.js"></script>
+	    <script type="text/javascript">
+	    	function porenzima() {
+	    		let boton=document.getElementById("enviar");
+	    		enviar.style.opacity=1.00;
+	    		enviar.style.boxShadow="0px 0px 40px #FFFFFF";
+	    	}
+	    	function porenzimafuera () {
+	    		let boton=document.getElementById("enviar");
+	    		enviar.style.opacity=0.6;
+	    		enviar.style.boxShadow="0px 0px 0px";
+	    	}
+
+	    	function part2(obj) {
+	    		obj.classList.remove("text-primary");
+	    		obj.classList.add("text-success");
+
+	    	}
+	    	function part21(obj) {
+	    		obj.classList.remove("text-success");
+	    		obj.classList.add("text-primary");
+	    	}
+	    	document.getElementById("enviar").addEventListener("click",function() {
+	    		let label1=document.getElementById("usuario");
+	    		let label2=document.getElementById("contrasena");
+	    		if (label1.value=="" || label2.value=="") {
+	    			let error=document.createElement("div");
+	    			error.className="alert alert-danger";
+	    			error.role="alert";
+	    			error.innerHTML="Debes indicar el nombre de usuario y la contraseña";
+	    		let formulari=document.getElementById("formulario");
+	    		formulario.appendChild(error);
+	    		}
+	    	});
+	    	function nocontra() {
+	    		let pulsat=document.getElementById("recuperar");
+	    		if (pulsat.checked){
+	    			let texto=document.getElementById("titulo");
+	    			texto.innerHTML="Recuperar contraseña";
+	    			let imagen=document.getElementById("icono");
+	    			imagen.src="images/olvido.png";
+	    			let formulari=document.getElementById("formulario");
+	    			formulario.action="password.php";
+	    			let label1=document.getElementById("usuario");
+	    			label1.type="email";
+	    			label1.placeholder="correo electrónico";
+	    			let label2=document.getElementById("contrasena");
+	    			label2.classList.add("d-none");
+	    		}
+	    		else {
+	    			let texto=document.getElementById("titulo");
+	    			texto.innerHTML="Iniciar sesión";
+	    			let imagen=document.getElementById("icono");
+	    			imagen.src="images/candado.png";
+	    			let formulari=document.getElementById("formulario");
+	    			formulario.action="login.php";
+	    			let label1=document.getElementById("usuario");
+	    			label1.type="text";
+	    			label1.placeholder="nombre de usuario";
+	    			let label2=document.getElementById("contrasena");
+	    			label2.classList.remove("d-none");
+	    		}
+	    	}
+
+	    </script>
+	</body>
+</html>

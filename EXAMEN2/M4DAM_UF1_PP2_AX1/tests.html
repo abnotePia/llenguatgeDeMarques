@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/x-icon" href="images/favicon.png" />
+<link rel="stylesheet" type="text/css" href="css/estilos.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<h1>Autoescoles Romeo</h1>
+	<div class="principal">
+
+	<h4>Realiza el test y comprueba tu nivel</h4>
+	<form name="pregunta1" action="corregir.php" method="post">
+	<div id="pregunt1">
+	<div id="pregunt1">
+	<span id="titulo1">datos de identificación</span>
+	<div id="NIF" class="preguntas">
+	<input type="text" name="nif" placeholder="NIF [1 2 3 4 5 6 7 8-L]"  pattern="[0-9]{8}[-]{1}[A-Z]{1}">
+	</div>
+	<div id="nombre" class="preguntas">
+	<input type="text" name="usuario" placeholder="nombre"">
+	</div>
+</div>
+	<span id="cont">datos de contacto</span>
+	<div id="Correo" class="preguntas">
+	<input type="email" name="correo" placeholder="correo electronico" required >
+	</div>
+	<div id="telefono" class="preguntas">
+	<input type="text" name="telefono" placeholder="telefono [555-555-555]" required pattern="[1-9]{3}[1-9]{2}[1-9]{2}[1-9]{2}">
+	</div>
+	<div id="confirmacion" class="preguntas">
+	<input type="checkbox" name="multipleOpcio1" id="pregunta1">
+	<label for="pregunta1">	Sí, deseo recibir la corrección del test por email y/o SMS</label>
+	</div>
+	<span id="fechas">
+	fecha de realización
+	</span>
+		<div id="fecha" class="preguntas">
+		<input type="date" name="Fecha nacimiento">
+		</div>
+	</div>
+	<div class="preguntas2">
+		<div class="mover">
+	<h5>1. ¿Debe utilizar las dos manos para manejar el volante?</h5>
+	<img src="images/test-1.jpg">
+	<div id="escrivir" class="preguntas">
+					<select name="desplegar">
+						<option value="A">No, bastará conuna mano</option>
+						<option value="B">Sí, con ambas manos</option>
+						<option value="C">No, soy un màquina</option>
+					</select>
+				</div>
+</div>
+	</div>
+	
+	<div class="preguntas2"> 
+		<div class="mover">
+	<h5>2. La señales triangulares situadas al lado de la calzada que se observa en la fotografía, le indica la proximidad de...
+	una curva hacia la derecha
+	un tramo de vía con pendiente descendente
+	una zona con desprendimientos frecuentes</h5>
+	<img src="images/test-2.jpg">
+	<div id="preguntas1" class="preguntas">
+		<input type="radio" name="unicaOpcio" id="pregunta1" value="A">
+		<label for="pregunta1">init(), start(), destroy(), start()</label>
+		</div>
+		<div id="preguntas1" class="preguntas">
+		<input type="radio" name="unicaOpcio" id="pregunta1" value="B">
+		<label for="pregunta1">init(), start(), destroy(), start()</label>
+		</div>
+		<div id="preguntas1" class="preguntas">
+		<input type="radio" name="unicaOpcio" id="pregunta1" value="C">
+		<label for="pregunta1">init(), start(), destroy(), start()</label>
+		</div>
+	</div>
+</div>
+<div class="preguntas2">
+	<div class="mover">
+	<h5>
+	3. Si Ud. conduce su turismo por un carril habilitado para circular en sentido contrario al habitual, ¿qué velocidad máxima no debe rebasar si no hay señal que la limite?
+</h5>
+<img src="images/test-3.jpg">
+
+	</div>
+</div>
+	<div class="preguntas2">
+		<div class="mover">
+<h5>
+	4. ¿Cuál es la velocidad máxima permitida en este tipo de vía?
+</h5>
+<img src="images/test-4.jpg">
+<div>
+	<input type="range" name="indicador" min="50" max="120">
+</div>
+</div>
+</div>
+<div class="boton">
+<button type="submit">Enviar para corregir</button>
+</div>
+</form>
+</div>
+<aside>	
+	<h3>Menu principal</h3>
+	<div class="nave">
+	<div class="menu"><a href="index.html">Inicio</a></div>
+	<div class="menu"><a href="permisos.html"> Permisos</a></div>
+	<div class="menu"><a href="tests.html">Tests</a></div>
+	<div class="menu"><a href="autoescuelas.html">Autoescuelas</a></div>
+	<div class="menu"><a href="recursos.html">Recursos</a><div>
+	</div>
+</aside>
+</body>
+</html>

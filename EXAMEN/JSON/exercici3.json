@@ -1,0 +1,78 @@
+﻿{
+    "grups": {
+        "grup": [
+            {
+                "nom": "1er Desenvolupament d'aplicacions multiplataforma",
+                "alumnes": {
+                    "alumne": [
+                        {
+                            "nom": "Alberto",
+                            "cognoms": "Bueno Miera",
+                            "edat": "22",
+                            "confinament": {
+                                "motiu": "Positiu",
+                                "Data_inici_confinament": "19/09/2020",
+                                "Dies_confinament": "14"
+                            }
+                        },
+                        {
+                            "nom": "Miguel Angel",
+                            "cognoms": "Turdo Senarriaga",
+                            "edat": "24",
+                            "confinament": {
+                                "motiu": "Contacte",
+                                "Data_inici_confinament": "20/10/2020",
+                                "Dies_confinament": "10"
+                            }
+                        }
+                    ]
+                },
+                "_codi": "DAM1"
+            },
+            {
+                "nom": "1er Sistemes microinformàtics i xarxes",
+                "alumnes": {
+                    "alumne": [
+                        {
+                            "nom": "Jesus",
+                            "cognoms": "Jimenez Zorriqueta",
+                            "edat": "15",
+                            "confinament": {
+                                "motiu": "Contacte",
+                                "Data_inici_confinament": "12/09/2020",
+                                "Dies_confinament": "14"
+                            }
+                        },
+                        {
+                            "nom": "Vanesa",
+                            "cognoms": "Perrote Varela",
+                            "edat": "16",
+                            "confinament": {
+                                "motiu": "Contacte",
+                                "Data_inici_confinament": "24/09/2020",
+                                "Dies_confinament": "10"
+                            }
+                        }
+                    ]
+                },
+                "_codi": "SMX1"
+            },
+            {
+                "nom": "2on Sistemes microinformàtics i xarxes",
+                "alumnes": {
+                    "alumne": {
+                        "nom": "Vicente",
+                        "cognoms": "Lafuente Tevenet",
+                        "edat": "16",
+                        "confinament": {
+                            "motiu": "Positiu",
+                            "Data_inici_confinament": "18/09/2020",
+                            "Dies_confinament": "14"
+                        }
+                    }
+                },
+                "_codi": "SMX2"
+            }
+        ]
+    }
+}

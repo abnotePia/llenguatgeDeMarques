@@ -1,0 +1,77 @@
+<awesome>
+	<vendedor nif= "17000000A">
+		<poblacion>
+			<direccion>Calle Río de Janeiro</direccion>
+			<codigo_postal>50000</codigo_postal>
+			<ciudad>Zaragoza</ciudad>
+		</poblacion>
+		<datos_de_contacto>
+			<telefono>976564323</telefono>
+			<fax>976564322</fax>
+			<web>http://www.encarnavales.com</web>
+			<gmail>encarnavales@gmail.com</gmail>
+		</datos_de_contacto>
+	</vendedor>
+	<facturas> 
+		<factura numero="1/2016">
+			<fecha>05/01/2016</fecha>
+			<cliente nif="A08479297">
+				<poblacion>
+					<direccion>Calle Kyoto 34 1°B</direccion>
+					<codigo_postal>08021</codigo_postal>
+					<ciudad>Barcelona</ciudad>
+				</poblacion>
+			</cliente>
+			<conceptos>
+				<concepto>
+					<cantidad>1</cantidad>
+					<nombre>Diseño visual de landing web</nombre>
+					<costo>
+						<precio>575euros</precio>
+						<impuestos>
+							<iva>21%</iva>
+							<irpf>15%</irpf>
+						</impuestos>
+					</costo>
+				</concepto>
+				<concepto>
+					<cantidad>1</cantidad>
+					<nombre>Material gráfico y recursos</nombre>
+					<costo>
+						<precio>100euros</precio>
+						<impuestos>
+							<iva>21%</iva>
+							<irpf>15%</irpf>
+						</impuestos>
+					</costo>
+				</concepto>
+				<concepto>
+					<cantidad>1</cantidad>
+					<nombre>Formación al equipo de marketing</nombre>
+					<costo>
+						<precio>340euros</precio>
+						<impuestos>
+							<iva>21%</iva>
+							<irpf>15%</irpf>
+						</impuestos>
+					</costo>
+				</concepto>
+			</conceptos>
+			<precio_total>
+				<iva>213,15euros</iva>
+				<retencion>152,25euros</retencion>
+				<precio_sin_impuestos>1015euros</precio_sin_impuestos>
+				<precio_con_impuestos>1075,90euros</precio_con_impuestos>
+			</precio_total>
+			<cobro>
+				<fecha>05/01/2016</fecha>
+				<importe>1075,90euros</importe>
+				<forma_de_pago>Transferencia</forma_de_pago>
+				<cuenta_de_pago>
+					<iban>ES62 0049 XXXX XXXX 3456 7890</iban>
+					<bic>BSCHESMMXXX</bic>
+				</cuenta_de_pago>
+			</cobro>
+		</factura>
+	</facturas>
+</awesome>

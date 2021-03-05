@@ -1,0 +1,193 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face{
+	font-family:fuente1;
+	src: url("../fonts/Alfaowner.ttf");
+}
+body{
+	background-image: url(../images/fondo.png);
+	background-color: #7C95A3;
+	background-repeat: repeat-y;
+	overflow: scroll;
+}
+h1{
+	font-family: fuente1;
+	color: #FC1D11;
+	margin-left: 400px;
+}
+aside{
+	font-family: fuente1;
+	color: white;
+	float: right;
+}
+a {
+	text-decoration:none;
+	color: white;
+	font-family: fuente1;
+}
+#pregunt1{
+	background-color: black;
+	color: #145190;
+}
+#preguntas1{
+	float: right;
+}
+.boton{
+	background-color: black;
+	border-color: #FC1D11;
+	border-radius: 20px;
+	border-style: solid;
+	height: 40px;
+	width: 200px;
+	margin-left: 400px;
+}
+.nave{
+	background-color: #145190;
+	border-style: solid;
+	border-color: white;
+	border-radius: 12px;
+	border-width:5px;
+	padding: 20px;
+}
+h3{
+	border-radius: 12px;
+	background-color: #145190;
+	border-style: solid;
+	border-color: white;
+	border-width:5px;
+}
+div.principal {
+	background-color: white;
+	border: 10px solid #FC1D11;
+	width: 1000px;
+	height: 100%;
+	margin-left: 50px;
+	float: left;
+	box-shadow: 100px white;
+}
+.menu{
+	background-image: url(../images/lista.png);
+	background-repeat: no-repeat;
+	transition: transform 1s ease 1s;
+	background-position: left center;
+}
+.menu:hover{
+	transform: translate(10px);
+}
+span {
+	border-style: solid;
+	border-color: white;
+	border-left: 10px;
+		width: 40px;
+	height: 40px;
+	border-bottom: 10px;
+}
+#NIF{
+	float: right;
+	border-style: solid;
+	border-radius: 20px;
+	background-color: white;
+}
+#nombre{
+	float: right;
+	border-style: solid;
+	border-radius: 20px;
+	background-color: white;
+}
+#titulo1{
+	width: 40px;
+	height: 40px;
+}
+#cont{
+	width: 100%;
+	float: left;
+}
+#fechas{
+	width: 100%;
+	float: left;
+}
+
+#Correo{
+	float: right;
+	border-style: solid;
+	border-radius: 20px;
+	background-color: white;
+}
+#telefono{
+	float: right;
+	border-style: solid;
+	border-radius: 20px;
+	background-color: white;
+}
+#confirmacion{
+	float: right;
+	border-style: solid;
+	border-radius: 20px;
+	background-color: white;
+}
+button {
+	font-family:fuente1;
+	color: #FC1D11;
+	border:0px;
+	outline: none;
+	background-color: transparent;
+}
+
+input{
+	font-family:fuente1;
+	color: blue;
+	border:0px;
+	outline: none;
+	background-color: transparent;
+	}
+	input:focus{
+		background-color: #FF9;
+	}
+	input:invalid{
+		background-image: url(../images/invalido.png);
+		background-repeat: no-repeat;
+		background-position: center right;
+	}
+	option {
+	font-family:fuente1;
+	color: blue;
+	border:0px;
+	outline: none;
+	background-color: transparent;
+	}
+	#escrivir{
+		float: right;
+	border-style: solid;
+	border-radius: 20px;
+	background-color: white;
+	}
+	.preguntas2{
+		color: #7C95A3;
+		font-family:fuente1;
+		/*border-color:#D3D3D3 ;
+		border-radius: 20px;
+		border-style: solid;
+		*/
+		transition: transform 1s ease 1s;
+	}
+	img{
+		border-radius: 500px;
+		border-style: solid;
+		position: center center;
+		border-color: #FC1D11;
+		width: 100px;
+		height: 100px;
+	}
+	.preguntas2:hover{
+		border-color:black ;
+		transform: rotateX(-360deg);
+	}
+	.mover{
+		transition: transform 1s ease 1s;
+		border-color:#D3D3D3 ;
+		border-style: solid;
+	}
+	.mover:hover{
+		transform: scale(1.3,1.3);
+		border-color:black;
+	}

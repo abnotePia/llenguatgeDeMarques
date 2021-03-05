@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<meta charset="utf-8">
+		<title>TEXT EDITOR</title>
+		<link rel="icon" type="image/png" href="images/favicon2.png">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+	</head>
+	<body class="bg-danger">
+		<div class="container mt-5">
+			<div class="row">
+				<div class="col-3 p-3">
+					<form id="editor" name="editor">
+						<h4 class="text-white">Fuente</h4>
+						<div class="form-group"> 
+							<label class="text-warning" for="fuente">Tipo de fuente</label>
+							<select class="form-control custom-select" id="fuente" name="fuente">
+								<option value="Arial" selected>Arial</option>
+								<option value="Courier New">Courier New</option>
+								<option value="Tahoma">Tahoma</option>
+								<option value="Verdana">Verdana</option>
+							</select>
+						</div>
+						<div class="form-group"> 
+							<label class="text-warning" for="tamano">Tamaño</label>
+							<input type="number" value="14" class="form-control form-control" id="tamano" name="tamano">
+						</div>
+						<h4 class="text-white">Estilo</h4>
+						<div class="form-group">
+							<label class="text-warning" for="color">Color del texto</label>
+							<input type="color" value="#000000" class="form-control form-control h-25" id="color" name="color" onchange="document.getElementById('panel').style.color = this.value;">
+						</div>
+						<div class="form-check pl-4">
+							<input type="checkbox" class="form-check-input" id="negrita" name="negrita">
+							<label class="text-warning" for="negrita">Negrita</label>
+						</div>
+						<div class="form-check pl-4">
+							<input type="checkbox" class="form-check-input" id="cursiva" name="cursiva">
+							<label class="text-warning" for="cursiva">Cursiva</label>
+						</div>
+						<div class="form-check pl-4">
+							<input type="checkbox" class="form-check-input" id="subrayado" name="subrayado">
+							<label class="text-warning" for="subrayado">Subrayado</label>
+						</div>
+						<h4 class="text-white">Alineación</h4>
+						<div class="form-check pl-4">
+							<input class="form-check-input" type="radio" name="alineacion" id="izquierda" value="izquierda" checked onclick="alinear('left');">
+							<label class="text-warning" for="izquierda">Izquierda</label>
+						</div>
+						<div class="form-check pl-4">
+							<input class="form-check-input" type="radio" name="alineacion" id="centro" value="centro">
+							<label class="text-warning" for="centro" onclick="alinear('center');">Centro</label>
+						</div>
+						<div class="form-check pl-4">
+							<input class="form-check-input" type="radio" name="alineacion" id="derecha" value="derecha">
+							<label class="text-warning" for="derecha" onclick="alinear('right');">Derecha</label>
+						</div>
+					</form>
+				</div>
+				<div class="col-9 p-1">
+					<div class="w-100 h-100 p-2" id="panel" style="background-color: white; font-family: arial; font-size: 14pt;" contenteditable>Texto de muestra</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-3.5.1.slim.min.js"></script>
+	    <script src="js/popper.min.js"></script>
+	    <script src="js/bootstrap.min.js"></script>
+	    <script type="text/javascript">
+	    	
+	    	document.getElementById("fuente").addEventListener("change", () => {
+
+	    		let fuente = document.getElementById("fuente").value;
+
+	    		document.getElementById("panel").style.fontFamily = fuente;
+	    	});
+	    	
+	    	document.getElementById("tamano").addEventListener("change", function() {
+
+	    		let tamano = this.value;
+
+	    		document.getElementById("panel").style.fontSize = tamano + "pt";
+	    	});
+	    	
+	    	document.getElementById("negrita").addEventListener("change", function() {
+	    		
+	    		if (this.checked) {
+	    			document.getElementById("panel").style.fontWeight = "bolder";
+	    		} else {	    			
+	    			document.getElementById("panel").style.fontWeight = "normal";
+	    		}
+
+	    	});
+	    	
+	    	document.getElementById("cursiva").addEventListener("change", function() {
+	    		
+	    		if (this.checked) {
+	    			document.getElementById("panel").style.fontStyle = "italic";
+	    		} else {	    			
+	    			document.getElementById("panel").style.fontStyle = "normal";
+	    		}
+
+	    	});
+	    	
+	    	document.getElementById("subrayado").addEventListener("change", function() {
+	    		
+	    		if (this.checked) {
+	    			document.getElementById("panel").style.textDecoration = "underline";
+	    		} else {	    			
+	    			document.getElementById("panel").style.textDecoration = "none";
+	    		}
+
+	    	});
+
+	    	function alinear(alineacion) {
+	    		document.getElementById("panel").style.textAlign = alineacion;
+	    	}
+
+	    </script>
+	</body>
+</html>
