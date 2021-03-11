@@ -19,6 +19,7 @@
 						mkdir("files");
 					}
 					$destination_path ="files/".$_FILES['archivo']['name']; 
+					$extension= explode(".", $destination_path);
 					move_uploaded_file($_FILES['archivo']['tmp_name'],$destination_path);
 					
 					
@@ -34,7 +35,7 @@
 		$numeros=strval(rand(0,9));
 		$nombre=$numeros.$nombre;
 		}
-		rename($destination_path,"files/".$nombre);
+		rename($destination_path,"files/".$nombre.".".$extension[1]);
 
 
 
