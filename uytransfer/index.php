@@ -15,7 +15,7 @@
 				cabezero();
 			echo "</nav>";
 			echo "<form name=\"datos\" action=\"upload.php\" method=\"post\" enctype=\"multipart/form-data\" class=\"col-12 \">
-			<input type=\"text\" name=\"texto\" class=\"offset-3 col-6 offset-3  my-5\" placeholder=\"Tu nombre \">
+			<input type=\"text\" name=\"nombre\" class=\"offset-3 col-6 offset-3  my-5\" placeholder=\"Tu nombre \">
 			<input type=\"file\" name=\"archivo\" class=\"offset-3 col-6 offset-3 \" placeholder=\"Examinar \">
 			<button type=\"submit\" class=\"offset-6 col-3 offset-3 \">Subir archivo</button>
 			</form>";

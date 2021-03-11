@@ -20,36 +20,44 @@
 					}
 					$destination_path ="files/".$_FILES['archivo']['name']; 
 					$extension= explode(".", $destination_path);
+					if (filesize($_FILES['archivo']['tmp_name'])<=10485760) {
+					if (($extension[1]=="pdf" || $extension[1]=="png" || $extension[1]=="jpg" || $extension[1]=="rar" || $extension[1]=="zip")) {
 					move_uploaded_file($_FILES['archivo']['tmp_name'],$destination_path);
-					
-					
+					$Year =strval(date("Y"));
+					$Month = strval(date("m"));
+					$day=strval(date("d"));
+					$nombre=$Year.$Month.$day;
+					for ($i=0;$i<5;$i++) {
+					$numeros=strval(rand(0,9));
+					$nombre=$nombre.$numeros;
+					}
+					rename($destination_path,"files/".$nombre.".".$extension[1]);
+					echo "<h1>Archivo Enviado Correctamente</h1>";
+					if (empty($_POST["nombre"])){
+						echo "<p>Oye tu!! Usa éste link para compartir tu archivo</p>";
+				}
+					else {
+					echo "<p> Hola $_POST[nombre], usa éste link para compartir tu archivo</p>";
+				}
+					echo "<a href=\"files/$nombre.$extension[1]\">files/$nombre.$extension[1]</a>";
+				}
+			}
+			else {
+				echo "Tamaño archivo demasiado grande";
+			}
+				
 
-		$Year =strval(date("Y"));
-		echo "The current year is $Year.";
-		$Month = strval(date("m"));
-		echo "The current month is $Month.";
-		$day=strval(date("d"));
-		echo "<br> ";
-		$nombre=$Year.$Month.$day;
-		for ($i=0;$i<5;$i++) {
-		$numeros=strval(rand(0,9));
-		$nombre=$numeros.$nombre;
-		}
-		rename($destination_path,"files/".$nombre.".".$extension[1]);
-
+				}
+				else {
+					echo "MES GRAN";
+			}
 
 
 			}
 		else {
 			
-			echo "<form name=\"datos\" action=\"upload.php\" method=\"post\" enctype=\"multipart/form-data\">
-			<label for=\"texto\">Nom</label>
-			<input type=\"text\" name=\"texto\">
-			<input type=\"file\" name=\"archivo\">
-			<label for=\"archivo\">Examinar</label>
-			<button type=\"submit\">Enviar</button>
-			</form>";
-			}
+			echo "Vacio";
+		}
 	
 			?>
 
