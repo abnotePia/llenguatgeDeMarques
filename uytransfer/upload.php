@@ -9,14 +9,34 @@
 	</head>
 
 	<body>
-			<?php	
+			<?php
+				include "header.php";
+			echo "<nav>";
+				cabezero();
+			echo "</nav>";
 				if (empty($_POST)==false) {
 					if (!file_exists("files")) {
 						mkdir("files");
 					}
 					$destination_path ="files/".$_FILES['archivo']['name']; 
 					move_uploaded_file($_FILES['archivo']['tmp_name'],$destination_path);
-					echo "Enviado";
+					
+					
+
+		$Year =strval(date("Y"));
+		echo "The current year is $Year.";
+		$Month = strval(date("m"));
+		echo "The current month is $Month.";
+		$day=strval(date("d"));
+		echo "<br> ";
+		$nombre=$Year.$Month.$day;
+		for ($i=0;$i<5;$i++) {
+		$numeros=strval(rand(0,9));
+		$nombre=$numeros.$nombre;
+		}
+		rename($destination_path,"files/".$nombre);
+
+
 
 			}
 		else {
