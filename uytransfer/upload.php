@@ -20,8 +20,7 @@
 					}
 					$destination_path ="files/".$_FILES['archivo']['name']; 
 					$extension= explode(".", $destination_path);
-					if (filesize($_FILES['archivo']['tmp_name'])<=10485760) {
-					if (($extension[1]=="pdf" || $extension[1]=="png" || $extension[1]=="jpg" || $extension[1]=="rar" || $extension[1]=="zip")) {
+					if (comrpovar($extension)==3){
 					move_uploaded_file($_FILES['archivo']['tmp_name'],$destination_path);
 					$Year =strval(date("Y"));
 					$Month = strval(date("m"));
@@ -40,25 +39,31 @@
 					echo "<p> Hola $_POST[nombre], usa éste link para compartir tu archivo</p>";
 				}
 					echo "<a href=\"files/$nombre.$extension[1]\">files/$nombre.$extension[1]</a>";
-				}
-			}
-			else {
-				echo "Tamaño archivo demasiado grande";
-			}
 				
-
+			}
+				else if (comrpovar($extension)==1){
+					echo "Extension del archivo no soportada";
 				}
-				else {
+				else if (comrpovar($extension)==2){
 					echo "MES GRAN";
 			}
-
 
 			}
 		else {
 			
 			echo "Vacio";
 		}
-	
+			function comrpovar($extension) {
+			$correcte=0;
+			if (filesize($_FILES['archivo']['tmp_name'])<=10485760) {
+				$correcte++;
+			}
+			
+			if (($extension[1]=="pdf" || $extension[1]=="png" || $extension[1]=="jpg" || $extension[1]=="rar" || $extension[1]=="zip")) {
+				$correcte=$correcte+2;
+			}
+			return $correcte;
+			}
 			?>
 
 	</body>
