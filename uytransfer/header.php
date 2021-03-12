@@ -16,7 +16,7 @@
   					<form class=\"form-inline col-12\">
 				   	 <a class=\"navbar-brand col-8\" href=\"index.php \"><h1>Uy!Transfer</h1><a>
 				     <a class=\"navbar-brand \" href=\"index.php \">Enviar archivo</a>
-				     <a class=\"navbar-brand \" href=\"index.html \">Mis últimos archivos</a>
+				     <a class=\"navbar-brand \" href=\"ultimosarchivos.php \">Mis últimos archivos</a>
 
 				     </form>
 				    </nav>";

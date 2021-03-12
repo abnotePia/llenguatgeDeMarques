@@ -15,11 +15,13 @@
 				cabezero();
 			echo "</nav>";
 			$enviar=true;
+			$gmail=false;
 			if (isset($_POST["gmail"])) {
 			if(!strpos($_POST["correo"], "@")) {
 						$enviar=false;
 						header("Location: index.php?error_mail=1");
 			}
+			$gmail=true;
 			}
 
 				if (empty($_POST)==false) {
@@ -28,6 +30,7 @@
 					}
 					$destination_path ="files/".$_FILES['archivo']['name']; 
 					$extension= explode(".", $destination_path);
+
 					if (comrpovar($extension)==3 && $enviar){
 					move_uploaded_file($_FILES['archivo']['tmp_name'],$destination_path);
 					$Year =strval(date("Y"));
@@ -39,6 +42,9 @@
 					$nombre=$nombre.$numeros;
 					}
 					rename($destination_path,"files/".$nombre.".".$extension[1]);
+					if ( $gmail == true ) {
+					mail($_POST["correo"],"Compartir",mensage());
+					}
 					echo "<h1>Archivo Enviado Correctamente</h1>";
 					if (empty($_POST["nombre"])){
 						echo "<p>Oye tu!! Usa éste link para compartir tu archivo</p>";
@@ -46,6 +52,13 @@
 					else {
 					echo "<p> Hola $_POST[nombre], usa éste link para compartir tu archivo</p>";
 				}
+					$i=0;
+					if (empty($_COOKIE["numero"]) == false ) {
+					$i=$_COOKIE["numero"];}
+					$idemail="email".strval($i);
+					setcookie($idemail,"files/$nombre.$extension[1]",time()+604800);
+					$i++;
+					setcookie("numero",$i);
 					echo "<a href=\"files/$nombre.$extension[1]\">files/$nombre.$extension[1]</a>";
 				
 			}
@@ -61,6 +74,15 @@
 			
 			echo "Vacio";
 		}
+
+		function mensage() {
+			$mensage=$_POST["mensage"];
+			if (empty($_POST["mensage"])) {
+				$mensage="Sorpresa!! Alguien ha compartido contigo un archivo.";
+			}
+			return $mensage;
+		}
+
 			function comrpovar($extension) {
 			$correcte=0;
 			if (filesize($_FILES['archivo']['tmp_name'])<=10485760) {
