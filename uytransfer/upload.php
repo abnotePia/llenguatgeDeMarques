@@ -14,21 +14,21 @@
 			echo "<nav>";
 				cabezero();
 			echo "</nav>";
+			$enviar=true;
 			if (isset($_POST["gmail"])) {
-			if(strpos($_POST["correo"], "@")) {
-						
+			if(!strpos($_POST["correo"], "@")) {
+						$enviar=false;
+						header("Location: index.php?error_mail=1");
 			}
-					else {
-					header("Location: index.php?error_mail=1");
-				}	
 			}
+
 				if (empty($_POST)==false) {
 					if (!file_exists("files")) {
 						mkdir("files");
 					}
 					$destination_path ="files/".$_FILES['archivo']['name']; 
 					$extension= explode(".", $destination_path);
-					if (comrpovar($extension)==3){
+					if (comrpovar($extension)==3 && $enviar){
 					move_uploaded_file($_FILES['archivo']['tmp_name'],$destination_path);
 					$Year =strval(date("Y"));
 					$Month = strval(date("m"));

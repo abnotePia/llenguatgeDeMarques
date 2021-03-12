@@ -16,11 +16,10 @@
 			echo "</nav>";
 			if (empty($_GET)==false){
 			if ($_GET["error_mail"]==1) {
-				
+				echo "<div class= \" offset-3 alert alert-danger col-5 border \">Error! Correo electronico no correcto</div>";
 			}
 		}
 	
-
 			echo "<form name=\"datos\" action=\"upload.php\" method=\"post\" enctype=\"multipart/form-data\" class=\"col-12 \">
 			<input type=\"text\" name=\"nombre\" class=\"offset-3 col-6 offset-3  my-5\" placeholder=\"Tu nombre \">
 			<input type=\"file\" name=\"archivo\" class=\"offset-3 col-6 offset-3 \" placeholder=\"Examinar \">
