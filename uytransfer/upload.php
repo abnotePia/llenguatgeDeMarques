@@ -14,6 +14,14 @@
 			echo "<nav>";
 				cabezero();
 			echo "</nav>";
+			if (isset($_POST["gmail"])) {
+			if(strpos($_POST["correo"], "@")) {
+						
+			}
+					else {
+					header("Location: index.php?error_mail=1");
+				}	
+			}
 				if (empty($_POST)==false) {
 					if (!file_exists("files")) {
 						mkdir("files");

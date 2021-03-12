@@ -13,9 +13,9 @@
 				function cabezero() {
 				echo "
 					<nav class=\"navbar navbar-dark bg-dark \">
-  					<form class=\"form-inline \">
-				   	 <a class=\"navbar-brand \" href=\"index.php \"><h1>Uy!Transfer</h1><a>
-				     <a class=\"navbar-brand \" href=\"index.html \">Enviar archivo</a>
+  					<form class=\"form-inline col-12\">
+				   	 <a class=\"navbar-brand col-8\" href=\"index.php \"><h1>Uy!Transfer</h1><a>
+				     <a class=\"navbar-brand \" href=\"index.php \">Enviar archivo</a>
 				     <a class=\"navbar-brand \" href=\"index.html \">Mis últimos archivos</a>
 
 				     </form>

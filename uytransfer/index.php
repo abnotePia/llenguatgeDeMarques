@@ -14,11 +14,25 @@
 			echo "<nav>";
 				cabezero();
 			echo "</nav>";
+			if (empty($_GET)==false){
+			if ($_GET["error_mail"]==1) {
+				
+			}
+		}
+	
+
 			echo "<form name=\"datos\" action=\"upload.php\" method=\"post\" enctype=\"multipart/form-data\" class=\"col-12 \">
 			<input type=\"text\" name=\"nombre\" class=\"offset-3 col-6 offset-3  my-5\" placeholder=\"Tu nombre \">
 			<input type=\"file\" name=\"archivo\" class=\"offset-3 col-6 offset-3 \" placeholder=\"Examinar \">
+			<input type=\"checkbox\" name=\"gmail\" class=\"offset-3 my-3\">
+			<label for=\"gmail \">Quiero enviar el link de descarga por email</label>
+			<label for=\"correo \" class=\"offset-3 col-5 \">Gmail</label>
+			<input type=\"email\" name=\"correo\" class=\"offset-3 col-5 \">
+			<label for=\"mensage \" class=\"offset-3 col-5 \">Mensage</label>
+			<textarea name=\"mensage\" class=\"offset-3 col-5\"></textarea>
 			<button type=\"submit\" class=\"offset-6 col-3 offset-3 \">Subir archivo</button>
-			</form>";
+			</form>"; 
+		
 			
 	
 			?>
