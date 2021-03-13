@@ -14,15 +14,17 @@
 			echo "<nav>";
 				cabezero();
 			echo "</nav>";
-			$cont=0;
 			echo "<h1 class=\"offset-3  my-5 \">Archivos enviados recientemente</h1>";
+			if (empty($_COOKIE) == false) {
+			$cont=0;
+			
 			echo "<ul class=\"list-unstyled col-12 \">";
 			while ($_COOKIE["numero"]>$cont) {
 				$cont2="email".strval($cont);
 				echo "<a href=\"$_COOKIE[$cont2] \" ><li class=\" offset-5  my-2 \">$_COOKIE[$cont2]</li></a>";
 			$cont++;
 			}
-			echo "</ul>";
+			echo "</ul>";}
 			
 			
 	

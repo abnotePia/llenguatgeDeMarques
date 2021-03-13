@@ -24,7 +24,7 @@
 			$gmail=true;
 			}
 
-				if (empty($_POST)==false) {
+				if (empty($_POST["archivo"])==false && empty($_POST["nombre"])==false) {
 					if (!file_exists("files")) {
 						mkdir("files");
 					}
@@ -33,10 +33,7 @@
 
 					if (comrpovar($extension)==3 && $enviar){
 					move_uploaded_file($_FILES['archivo']['tmp_name'],$destination_path);
-					$Year =strval(date("Y"));
-					$Month = strval(date("m"));
-					$day=strval(date("d"));
-					$nombre=$Year.$Month.$day;
+					$nombre=strval(date("Y")).strval(date("m")).strval(date("d"));
 					for ($i=0;$i<5;$i++) {
 					$numeros=strval(rand(0,9));
 					$nombre=$nombre.$numeros;
@@ -45,7 +42,10 @@
 					if ( $gmail == true ) {
 					mail($_POST["correo"],"Compartir",mensage());
 					}
-					echo "<h1>Archivo Enviado Correctamente</h1>";
+					echo "<h1 class=\"offset-3  my-5 \">Archivo Enviado Correctamente</h1>
+					<img src=\"images/correcto.png \" class=\" offset-4\">
+					<div class=\"offset-4 my-1\">
+					";
 					if (empty($_POST["nombre"])){
 						echo "<p>Oye tu!! Usa éste link para compartir tu archivo</p>";
 				}
@@ -59,14 +59,20 @@
 					setcookie($idemail,"files/$nombre.$extension[1]",time()+604800);
 					$i++;
 					setcookie("numero",$i);
-					echo "<a href=\"files/$nombre.$extension[1]\">files/$nombre.$extension[1]</a>";
+					echo "<a href=\"files/$nombre.$extension[1]\" class=\" offset-1 \">files/$nombre.$extension[1]</a>";
+					echo "</div>";
 				
 			}
 				else if (comrpovar($extension)==1){
-					echo "Extension del archivo no soportada";
+					echo "<h1 class=\"offset-2  my-5 \">Error !Extension del archivo no soportada</h1>
+					<img src=\"images/incorrecto.png \" class=\" offset-4\">
+
+					";
 				}
 				else if (comrpovar($extension)==2){
-					echo "MES GRAN";
+					echo "<h1 class=\"offset-2  my-5 \">Error! Tamaño del archivo superior al maximo permitido</h1>
+					<img src=\"images/incorrecto.png \" class=\" offset-4\">
+					";
 			}
 
 			}
