@@ -24,7 +24,7 @@
 			$gmail=true;
 			}
 
-				if (empty($_POST["archivo"])==false && empty($_POST["nombre"])==false) {
+				if (empty($_FILES["archivo"])==false && empty($_POST["nombre"])==false) {
 					if (!file_exists("files")) {
 						mkdir("files");
 					}
@@ -84,7 +84,10 @@
 		function mensage() {
 			$mensage=$_POST["mensage"];
 			if (empty($_POST["mensage"])) {
-				$mensage="Sorpresa!! Alguien ha compartido contigo un archivo.";
+				$mensage="Sorpresa!! Alguien ha compartido contigo un archivo.
+				<a href=\"files/$nombre.$extension[1]\" class=\" offset-1 \">files/$nombre.$extension[1]</a>
+
+				 ";
 			}
 			return $mensage;
 		}
