@@ -40,8 +40,9 @@
 					}
 					rename($destination_path,"files/".$nombre.".".$extension[1]);
 					if ( $gmail == true ) {
-					mail($_POST["correo"],"Compartir",mensage());
+					mail($_POST["correo"],"Compartir",mensage($nombre,$extension));
 					}
+					
 					echo "<h1 class=\"offset-3  my-5 \">Archivo Enviado Correctamente</h1>
 					<img src=\"images/correcto.png \" class=\" offset-4\">
 					<div class=\"offset-4 my-1\">
@@ -78,16 +79,16 @@
 			}
 		else {
 			
-			echo "Vacio";
+			echo "<h1 class=\"offset-2  my-5 \">Error! No se a introducido nada</h1>
+					<img src=\"images/incorrecto.png \" class=\" offset-4\">
+					";
 		}
 
-		function mensage() {
-			$mensage=$_POST["mensage"];
+		function mensage($nombre,$extension) {
+			$enlace="http://localhost/uytransfer/files/$nombre.$extension[1]";
+			$mensage="$_POST[mensage]\n".$enlace;
 			if (empty($_POST["mensage"])) {
-				$mensage="Sorpresa!! Alguien ha compartido contigo un archivo.
-				<a href=\"files/$nombre.$extension[1]\" class=\" offset-1 \">files/$nombre.$extension[1]</a>
-
-				 ";
+				$mensage="Sorpresa!! Alguien ha compartido contigo un archivo.".$enlace;
 			}
 			return $mensage;
 		}
