@@ -24,13 +24,13 @@
 			$gmail=true;
 			}
 
-				if (empty($_FILES["archivo"])==false && empty($_POST["nombre"])==false) {
+				if (empty($_POST["nombre"])==false && empty($_FILES["archivo"]["name"])==false) {
+				
 					if (!file_exists("files")) {
 						mkdir("files");
 					}
 					$destination_path ="files/".$_FILES['archivo']['name']; 
 					$extension= explode(".", $destination_path);
-
 					if (comrpovar($extension)==3 && $enviar){
 					move_uploaded_file($_FILES['archivo']['tmp_name'],$destination_path);
 					$nombre=strval(date("Y")).strval(date("m")).strval(date("d"));
@@ -88,7 +88,7 @@
 			$enlace="http://localhost/uytransfer/files/$nombre.$extension[1]";
 			$mensage="$_POST[mensage]\n".$enlace;
 			if (empty($_POST["mensage"])) {
-				$mensage="Sorpresa!! Alguien ha compartido contigo un archivo.".$enlace;
+				$mensage="Sorpresa!! Alguien ha compartido contigo un archivo\n".$enlace;
 			}
 			return $mensage;
 		}
@@ -98,8 +98,7 @@
 			if (filesize($_FILES['archivo']['tmp_name'])<=10485760) {
 				$correcte++;
 			}
-			
-			if (($extension[1]=="pdf" || $extension[1]=="png" || $extension[1]=="jpg" || $extension[1]=="rar" || $extension[1]=="zip")) {
+			if (($extension[1]=="pdf" || $extension[1]=="png" || $extension[1]=="jpg" || $extension[1]=="rar" || $extension[1]=="zip" || $extension[1]=="PDF" || $extension[1]=="PNG" || $extension[1]=="JPG" || $extension[1]=="RAR" || $extension[1]=="ZIP" )) {
 				$correcte=$correcte+2;
 			}
 			return $correcte;
