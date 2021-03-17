@@ -11,18 +11,15 @@
 	<body>
 			<?php
 				function cabezero() {
-				echo "
-					<nav class=\"navbar navbar-dark bg-dark \">
-  					<form class=\"form-inline \">
-				   	 <a class=\"navbar-brand \" href=\"index.php \"><h1>Uy!Transfer</h1><a>
-				     <a class=\"navbar-brand \" href=\"index.html \">Enviar archivo</a>
-				     <a class=\"navbar-brand \" href=\"index.html \">Mis últimos archivos</a>
-
-				     </form>
-				    </nav>";
- 				
+					echo "
+						<nav class=\"navbar navbar-dark bg-dark \">
+		  					<form class=\"form-inline col-12\">
+							   	 <a class=\"navbar-brand col-8\" href=\"index.php \"><h1>Uy!Transfer</h1><a>
+							     <a class=\"navbar-brand \" href=\"index.php \">Enviar archivo</a>
+							     <a class=\"navbar-brand \" href=\"ultimosarchivos.php \">Mis últimos archivos</a>
+						    </form>
+					    </nav>";
  				}
-	
 			?>
 	 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

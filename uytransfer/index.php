@@ -14,11 +14,34 @@
 			echo "<nav>";
 				cabezero();
 			echo "</nav>";
+			if (empty($_GET)==false){
+			if ($_GET["error_mail"]==1) {
+				echo "<div class= \" offset-3 alert alert-danger col-5 border \">Error! Correo electronico no correcto</div>";
+			}
+		}
+	
 			echo "<form name=\"datos\" action=\"upload.php\" method=\"post\" enctype=\"multipart/form-data\" class=\"col-12 \">
-			<input type=\"text\" name=\"nombre\" class=\"offset-3 col-6 offset-3  my-5\" placeholder=\"Tu nombre \">
-			<input type=\"file\" name=\"archivo\" class=\"offset-3 col-6 offset-3 \" placeholder=\"Examinar \">
-			<button type=\"submit\" class=\"offset-6 col-3 offset-3 \">Subir archivo</button>
-			</form>";
+			<div class=\"col-12 my-3\">
+			<input type=\"text\" name=\"nombre\" class=\"offset-3 col-4\" placeholder=\"Tu nombre \">
+			</div>
+			<div class=\"col-12\">
+			<input type=\"file\" name=\"archivo\" class=\"offset-3\">
+			</div>
+			<div class=\"col-12 my-3\">
+			<input type=\"checkbox\" name=\"gmail\" class=\"offset-3\">
+			<label for=\"gmail \">Quiero enviar el link de descarga por email</label>
+			</div>
+			<div class=\"col-12 my-3\">
+			<label for=\"correo \" class=\"offset-3 col-5 \">Gmail</label>
+			<input type=\"text\" name=\"correo\" class=\"offset-3 col-5 \">
+			</div>
+			<div class=\"col-12 my-3\">
+			<label for=\"mensage \" class=\"offset-3 col-5 \">Mensage</label>
+			<textarea name=\"mensage\" class=\"offset-3 col-5\"></textarea>
+			</div>
+			<button type=\"submit\" class=\"offset-4 col-3 offset-3  btn btn-primary\">Subir archivo</button>
+			</form>"; 
+		
 			
 	
 			?>
