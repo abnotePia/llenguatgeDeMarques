@@ -58,10 +58,10 @@
 						if (empty($_COOKIE["numero"]) == false ) {
 							$i=$_COOKIE["numero"];}
 							$idemail="email".strval($i);
-							setcookie($idemail,"files/$nombre.$extension[1]",time()+604800);
+							setcookie($idemail,"http://localhost/uytransfer/files/$nombre.$extension[1]",time()+604800);
 							$i++;
 							setcookie("numero",$i);
-							echo "<a href=\"files/$nombre.$extension[1]\" class=\" offset-1 \">files/$nombre.$extension[1]</a> </div>";
+							echo "<a href=\"http://localhost/uytransfer/files/$nombre.$extension[1]\">http://localhost/uytransfer/files/$nombre.$extension[1]</a> </div>";
 						}
 
 					else if (comrpovar($extension)==1){
