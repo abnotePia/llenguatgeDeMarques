@@ -31,7 +31,7 @@
 					}
 
 					$destination_path ="files/".$_FILES['archivo']['name']; 
-					$extension= explode(".", $destination_path);
+					$extension= substr($destination_path,-3);
 					if (comrpovar($extension)==3 && $enviar){
 						move_uploaded_file($_FILES['archivo']['tmp_name'],$destination_path);
 						$nombre=strval(date("Y")).strval(date("m")).strval(date("d"));
@@ -56,12 +56,13 @@
 						}
 						$i=0;
 						if (empty($_COOKIE["numero"]) == false ) {
-							$i=$_COOKIE["numero"];}
+							$i=$_COOKIE["numero"];
+						}
 							$idemail="email".strval($i);
-							setcookie($idemail,"http://localhost/uytransfer/files/$nombre.$extension[1]",time()+604800);
+							setcookie($idemail,"http://localhost/uytransfer/files/$nombre.$extension",time()+604800);
 							$i++;
 							setcookie("numero",$i);
-							echo "<a href=\"http://localhost/uytransfer/files/$nombre.$extension[1]\">http://localhost/uytransfer/files/$nombre.$extension[1]</a> </div>";
+							echo "<a href=\"http://localhost/uytransfer/files/$nombre.$extension\">http://localhost/uytransfer/files/$nombre.$extension</a> </div>";
 						}
 
 					else if (comrpovar($extension)==1){
@@ -81,7 +82,7 @@
 			}
 
 		function mensage($nombre,$extension) {
-			$enlace="http://localhost/uytransfer/files/$nombre.$extension[1]";
+			$enlace="http://localhost/uytransfer/files/$nombre.$extension";
 			$mensage="$_POST[mensage]\n".$enlace;
 			if (empty($_POST["mensage"])) {
 				$mensage="Sorpresa!! Alguien ha compartido contigo un archivo\n".$enlace;
@@ -94,7 +95,7 @@
 			if (filesize($_FILES['archivo']['tmp_name'])<=10485760) {
 				$correcte++;
 			}
-			if (($extension[1]=="pdf" || $extension[1]=="png" || $extension[1]=="jpg" || $extension[1]=="rar" || $extension[1]=="zip" || $extension[1]=="PDF" || $extension[1]=="PNG" || $extension[1]=="JPG" || $extension[1]=="RAR" || $extension[1]=="ZIP" )) {
+			if (($extension=="pdf" || $extension=="png" || $extension=="jpg" || $extension=="rar" || $extension=="zip" || $extension=="PDF" || $extension=="PNG" || $extension=="JPG" || $extension=="RAR" || $extension=="ZIP" )) {
 				$correcte=$correcte+2;
 			}
 			return $correcte;
