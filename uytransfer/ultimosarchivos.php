@@ -13,7 +13,7 @@
 			include "header.php";
 			cabezero();
 			echo "<h1 class=\"offset-3  my-5 \">Archivos enviados recientemente</h1>";
-			if (empty($_COOKIE) == false) {
+			if (empty($_COOKIE["numero"]) == false) {
 				$cont=0;
 				echo "<ul class=\"list-unstyled col-12 \">";
 				while ($_COOKIE["numero"]>$cont) {
