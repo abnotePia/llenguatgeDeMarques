@@ -39,7 +39,7 @@
 							$numeros=strval(rand(0,9));
 							$nombre=$nombre.$numeros;
 						}
-						rename($destination_path,"files/".$nombre.".".$extension[1]);
+						rename($destination_path,"files/".$nombre.".".$extension);
 						if ( $gmail == true ) {
 							mail($_POST["correo"],"Compartir",mensage($nombre,$extension));
 						}
