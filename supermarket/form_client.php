@@ -43,9 +43,17 @@
 							<label for="poblacion">Població (obligatori):</label>
 							<select class="form-control" name="poblacion" id="poblacion">
 								<option value="">Selecciona una opció</option>
-								<option value="1">Badalona</option>
-								<option value="2">Barcelona</option>
-								<option value="3">Castelldefels</option>
+								<?php
+								include "config.php";
+								$sql = "SELECT id_poblacio,nom FROM poblacions order by nom";
+								$result =$conn ->query($sql);
+								$row = $result->fetch_assoc();
+								while ($row) {
+								echo "<option value=\"$row[id_poblacio]\">$row[nom]</option>";
+								$row = $result->fetch_assoc();	
+							}
+
+								?>
 							</select>
 						</div>
 						<div class="form-group">
