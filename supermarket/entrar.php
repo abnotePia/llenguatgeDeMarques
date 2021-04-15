@@ -14,6 +14,26 @@
 				<div class="form-group text-right">
 					<button type="submit" class="btn btn-default">Entrar</button>
 				</div>
+				<?php
+				if (empty($_POST)==false) {
+					include "config.php";
+					$usuari=$_POST["username"];
+					$contra=$_POST["pass"];
+					$sql = "SELECT id_client FROM clients WHERE nom_usuari like '$usuari' AND contrasenya like '$contra'";
+					//echo $sql;
+					$result =$conn->query($sql);
+					$row = $result->fetch_assoc();
+				
+					if (empty($row["id_client"])==false) {
+					$_SESSION['user'] = $row["id_client"];
+					header("Location: comprar.php");
+					}
+					else {
+						echo "<div class=\"alert alert-danger\" role=\"alert\">Error! Contrasenya o nombre de usuario incorrectos</div>";
+					}
+				}
+
+				?>
 			</form>
 		</div>
 	</body>
