@@ -20,23 +20,43 @@
 						<a href="comprar.php?cat=13" class="list-group-item list-group-item-action">Sopa i puré</a>
 					</div>
 				</div>
-				<div class="col-8">
-					<h3 class="text-white">Els nostres productes</h3>
-					<table class="table">        
-						<tr> 
-							<th>Producte</th> 
-							<th>Categoria</th>
-							<th class="text-right">Preu</th>
-							<th></th>
-						</tr>
-						 
+				<div class="col-8">						 
 							<?php
 							include "config.php";
+							if (empty($_GET)==false) {
+							$id = $_GET["cat"]; 
 							$sql = "SELECT productes.codi,productes.categoria,productes.nom,productes.preu,productes.imatge,categories.nom as cat FROM productes
 							inner join categories on categories.id_categoria =  productes.categoria
+							where categories.id_categoria = $id
 							";
-								$result =$conn ->query($sql);
+							$result =$conn ->query($sql);
+							$row = $result->fetch_assoc();
+							echo "
+							<h3 class=\"text-white\">$row[cat]</h3>
+						<table class=\"table\">        
+							<tr> 
+								<th>Producte</th> 
+								<th>Categoria</th>
+								<th class=\"text-right\">Preu</th>
+								<th></th>
+							</tr>";
+							}
+							else {
+								echo "
+								<h3 class=\"text-white\">Els nostres productes</h3>
+								<table class=\"table\">        
+									<tr> 
+										<th>Producte</th> 
+										<th>Categoria</th>
+										<th class=\"text-right\">Preu</th>
+										<th></th>
+									</tr>";
+								$sql = "SELECT productes.codi,productes.categoria,productes.nom,productes.preu,productes.imatge,categories.nom as cat FROM productes
+							inner join categories on categories.id_categoria =  productes.categoria";
+							$result =$conn ->query($sql);
 								$row = $result->fetch_assoc();
+							}
+								
 								while ($row) {
 									echo "<tr>
 									<td class=\"align-middle\">
@@ -57,8 +77,6 @@
 						</tr>";
 								$row = $result->fetch_assoc();	
 								}
-
-
 								$conn->close();
 							?>
 					</table>
