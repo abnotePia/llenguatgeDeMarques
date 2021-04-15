@@ -19,11 +19,13 @@
 					include "config.php";
 					$usuari=$_POST["username"];
 					$contra=$_POST["pass"];
-					$sql = "SELECT id_client FROM clients WHERE nom_usuari = '$usuari' AND contrasenya = '$contra'";
-					$result =$conn ->query($sql);
+					$sql = "SELECT id_client FROM clients WHERE nom_usuari like '$usuari' AND contrasenya like '$contra'";
+					//echo $sql;
+					$result =$conn->query($sql);
 					$row = $result->fetch_assoc();
-					if ($row["id_client"] != "") {
-					$_SESSION['id'] = $row["id_usuari"];
+				
+					if (empty($row["id_client"])==false) {
+					$_SESSION['user'] = $row["id_client"];
 					header("Location: comprar.php");
 					}
 					else {

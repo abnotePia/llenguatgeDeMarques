@@ -55,7 +55,23 @@
 						</div>
 					</li>
 				</ul>
-				<a href="entrar.php" class="btn btn-primary my-0 mx-2">Entrar</a>
-				<a href="form_client.php" class="btn btn-outline-primary my-0">Nou client</a>
+				<?php
+				if (empty($_SESSION['user'])==false) {
+					include "config.php";
+					$idusuari = $_SESSION['user'];
+					$sql = "SELECT nom,cognoms FROM clients WHERE id_client = $idusuari";
+					$result =$conn->query($sql);
+					$row = $result->fetch_assoc();
+					echo "
+						<div class=\"btn btn-primary my-0 mx-2\">$row[nom] $row[cognoms]</div>
+						<a href=\"tancar.php\" class=\"btn btn-outline-primary my-0\">Tancar sessió</a>";
+				}
+				else {
+					echo "
+						<a href=\"entrar.php\" class=\"btn btn-primary my-0 mx-2\">Entrar</a>
+						<a href=\"form_client.php\" class=\"btn btn-outline-primary my-0\">Nou client</a>";
+				}
+				?>
+				
 			</div>
 		</nav>
