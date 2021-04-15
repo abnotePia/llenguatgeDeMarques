@@ -2,14 +2,11 @@
 
 function nomUsuariValid($pNomUsuari) {
 	$valid = false;
-
 	if (strlen($pNomUsuari) >= 8) {
 		if (!strpos($pNomUsuari, " ") && !strpos($pNomUsuari, "'") && !strpos($pNomUsuari, "à") && !strpos($pNomUsuari, "À") && !strpos($pNomUsuari, "á") && !strpos($pNomUsuari, "Á") && !strpos($pNomUsuari, "è") && !strpos($pNomUsuari, "È") && !strpos($pNomUsuari, "é") && !strpos($pNomUsuari, "É") && !strpos($pNomUsuari, "ì") && !strpos($pNomUsuari, "Ì") && !strpos($pNomUsuari, "í") && !strpos($pNomUsuari, "Í") && !strpos($pNomUsuari, "ò") && !strpos($pNomUsuari, "Ò") && !strpos($pNomUsuari, "ó") && !strpos($pNomUsuari, "Ó") && !strpos($pNomUsuari, "ù") && !strpos($pNomUsuari, "Ù") && !strpos($pNomUsuari, "ú") && !strpos($pNomUsuari, "Ú") && !strpos($pNomUsuari, "ñ") && !strpos($pNomUsuari, "Ú") && !strpos($pNomUsuari, "Ñ") && !strpos($pNomUsuari, "ç") && !strpos($pNomUsuari, "Ç")) {
-
 			$valid = true;
 		}
 	}
-
 	return $valid;
 }
 
