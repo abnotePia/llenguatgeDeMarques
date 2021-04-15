@@ -32,21 +32,23 @@
 						 
 							<?php
 							include "config.php";
-							$sql = "SELECT* FROM detall_productes";
+							$sql = "SELECT productes.codi,productes.categoria,productes.nom,productes.preu,productes.imatge,categories.nom as cat FROM productes
+							inner join categories on categories.id_categoria =  productes.categoria
+							";
 								$result =$conn ->query($sql);
 								$row = $result->fetch_assoc();
 								while ($row) {
 									echo "<tr>
 									<td class=\"align-middle\">
-								<img src=\"images/productes/no-image.png\" class=\"img-thumbnail mr-2\" style=\"height: 50px;\" />
-								Arroz Golden Sun 1 kg
+								<img src=\"$row[imatge]\" class=\"img-thumbnail mr-2\" style=\"height: 50px;\" />
+								$row[nom]
 							</td>
-							<td class=\"align-middle\">Arròs</td>
-							<td class=\"align-middle text-right\">0.75 €</td>
+							<td class=\"align-middle\">$row[cat]</td>
+							<td class=\"align-middle text-right\">$row[preu] €</td>
 							<td class=\"align-middle\">
 								<form class=\"form-inline\" action=\"carrito.php\" method=\"post\">
 									<div class=\"form-group\">
-										<input type=\"hidden\" name=\"codi\" value=\"ARR00001\" />
+										<input type=\"hidden\" name=\"codi\" value=\"$row[codi]\" />
 										<input type=\"number\" class=\"form-control form-control-sm mr-2\" name=\"quantitat\" min=\"1\" value=\"1\" style=\"width: 50px;\" />
 									</div>
 									<button type=\"submit\" class=\"btn btn-primary\"><i class=\"fas fa-cart-plus\"></i></button>
@@ -57,7 +59,7 @@
 								}
 
 
-
+								$conn->close();
 							?>
 					</table>
 				</div>
