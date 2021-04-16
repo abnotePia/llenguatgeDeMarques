@@ -1,5 +1,6 @@
 <?php
 	require "header.php";
+	include "config.php";
 ?>
 		<div class="container m-5 mx-auto">
 			<div class="col-8 offset-2">
@@ -10,91 +11,37 @@
 						<th>Preu</th>
 						<th></th>
 					</tr>
-					<tr> 
-						<td class="align-middle">
-							<img src="images/productes/no-image.png" class="img-thumbnail mr-2" style="height: 50px;" />
-							Arroz Golden Sun 1 kg
-						</td>
-						<td class="align-middle">Arròs</td>
-						<td class="align-middle">0.75 €</td>
-						<td class="align-middle">
-							<form class="form-inline" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> method="post">
-								<a href="form_producte.php?codi=ARR00001" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
-								<div class="form-group">
-									<input type="hidden" name="codi" value="ARR00001" />
+					<?php
+					$sql = "SELECT productes.codi,productes.categoria,productes.nom,productes.preu,productes.imatge,categories.nom as cat FROM productes
+							inner join categories on categories.id_categoria =  productes.categoria";
+							
+							$result =$conn ->query($sql);
+							$row = $result->fetch_assoc();
+
+								while ($row) {
+									echo "<tr>
+									<td class=\"align-middle\">
+								<img src=\"$row[imatge]\" class=\"img-thumbnail mr-2\" style=\"height: 50px;\" />
+								$row[nom]
+							</td>
+							<td class=\"align-middle\">$row[cat]</td>
+							
+							<td class=\"align-middle\">
+								<form class=\"form-inline\" action=\"form_producte.php?codi=$row[codi]\" method=\"get\">
+								<a href=\"form_producte.php?codi=$row[codi]\" class=\"btn btn-primary\"><i class=\"fas fa-pencil-alt\"></i></a>
+								<div class=\"form-group\">
+									<input type=\"hidden\" name=\"codi\" value=\"$row[codi]\" />
 								</div>
-								<button type="submit" class="btn btn-primary"><i class="fas fa-trash-alt"></i></button>
-							</form>
-						</td> 
-					</tr>
-					<tr> 
-						<td class="align-middle">
-							<img src="images/productes/no-image.png" class="img-thumbnail mr-2" style="height: 50px;" />
-							Arroz Golden Sun 1 kg
-						</td>
-						<td class="align-middle">Arròs</td>
-						<td class="align-middle">0.75 €</td>
-						<td class="align-middle">
-							<form class="form-inline" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> method="post">
-								<a href="form_producte.php?codi=ARR00001" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
-								<div class="form-group">
-									<input type="hidden" name="codi" value="ARR00001" />
-								</div>
-								<button type="submit" class="btn btn-primary"><i class="fas fa-trash-alt"></i></button>
-							</form>
-						</td> 
-					</tr>
-					<tr> 
-						<td class="align-middle">
-							<img src="images/productes/no-image.png" class="img-thumbnail mr-2" style="height: 50px;" />
-							Arroz Golden Sun 1 kg
-						</td>
-						<td class="align-middle">Arròs</td>
-						<td class="align-middle">0.75 €</td>
-						<td class="align-middle">
-							<form class="form-inline" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> method="post">
-								<a href="form_producte.php?codi=ARR00001" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
-								<div class="form-group">
-									<input type="hidden" name="codi" value="ARR00001" />
-								</div>
-								<button type="submit" class="btn btn-primary"><i class="fas fa-trash-alt"></i></button>
-							</form>
-						</td> 
-					</tr>
-					<tr> 
-						<td class="align-middle">
-							<img src="images/productes/no-image.png" class="img-thumbnail mr-2" style="height: 50px;" />
-							Arroz Golden Sun 1 kg
-						</td>
-						<td class="align-middle">Arròs</td>
-						<td class="align-middle">0.75 €</td>
-						<td class="align-middle">
-							<form class="form-inline" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> method="post">
-								<a href="form_producte.php?codi=ARR00001" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
-								<div class="form-group">
-									<input type="hidden" name="codi" value="ARR00001" />
-								</div>
-								<button type="submit" class="btn btn-primary"><i class="fas fa-trash-alt"></i></button>
-							</form>
-						</td> 
-					</tr>
-					<tr> 
-						<td class="align-middle">
-							<img src="images/productes/no-image.png" class="img-thumbnail mr-2" style="height: 50px;" />
-							Arroz Golden Sun 1 kg
-						</td>
-						<td class="align-middle">Arròs</td>
-						<td class="align-middle">0.75 €</td>
-						<td class="align-middle">
-							<form class="form-inline" action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> method="post">
-								<a href="form_producte.php?codi=ARR00001" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a>
-								<div class="form-group">
-									<input type="hidden" name="codi" value="ARR00001" />
-								</div>
-								<button type="submit" class="btn btn-primary"><i class="fas fa-trash-alt"></i></button>
-							</form>
-						</td> 
-					</tr>
+								<button type=\"submit\" class=\"btn btn-primary\"><i class=\"fas fa-trash-alt\"></i></button>
+								</form>
+							</td> 
+						</tr>";
+								$row = $result->fetch_assoc();	
+								}
+
+					?>
+					
+						
 				</table>
 			</div>
 		</div>

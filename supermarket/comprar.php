@@ -54,7 +54,7 @@
 								$sql = "SELECT productes.codi,productes.categoria,productes.nom,productes.preu,productes.imatge,categories.nom as cat FROM productes
 							inner join categories on categories.id_categoria =  productes.categoria";
 							$result =$conn ->query($sql);
-								$row = $result->fetch_assoc();
+							$row = $result->fetch_assoc();
 							}
 								
 								while ($row) {

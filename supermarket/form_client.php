@@ -117,40 +117,41 @@
 									
 									if ($incorrecte) {
 										echo "
-										<div class=\"container m-5 mx-auto text-white\">
-				<form action=\"form_client.php\" method=\"post\">
-				<div class=\"row\">
-					<div class=\"col-4 offset-2\">
-						<div class=\"form-group\">
-							<label for=\"username\">Nom d'usuari (obligatori):</label>
-							<input type=\"text\" class=\"form-control\" name=\"username\" id=\"username\" value=\"$_POST[username]\"/>
-						</div>
-						<div class=\"form-group\">
-							<label for=\"pass\">Contrasenya (obligatori):</label>
-							<input type=\"password\" class=\"form-control\" name=\"pass\" id=\"pass\" value=\"$_POST[pass]\"/>
-						</div>
-						<div class=\"form-group\">
-							<label for=\"rp_pass\">Repeteix la contrasenya (obligatori):</label>
-							<input type=\"password\" class=\"form-control\" name=\"rp_pass\" id=\"rp_pass\" value=\"$_POST[rp_pass]\"/>
-						</div>
-						<div class=\"form-group\">
-							<label for=\"nombre\">Nom (obligatori):</label>
-							<input type=\"text\" class=\"form-control\" name=\"nombre\" id=\"nombre\" value=\"$_POST[nombre]\"/>
-						</div>
-						<div class=\"form-group\">
-							<label for=\"apellidos\">Cognoms (obligatori):</label>
-							<input type=\"text\" class=\"form-control\" name=\"apellidos\" id=\"apellidos\" value=\"$_POST[apellidos]\"/>
-						</div>
-						<div class=\"form-group\">
-							<label for=\"nif\">NIF (obligatori):</label>
-							<input type=\"text\" class=\"form-control\" name=\"nif\" id=\"nif\" value=\"$_POST[nif]\"/>
-						</div>
-					</div>
-					<div class=\"col-4\">
-						<div class=\"form-group\">
-							<label for=\"direccion\">Adreça (obligatori):</label>
-							<input type=\"text\" class=\"form-control\" name=\"direccion\" id=\"direccion\" value=\"$_POST[direccion]\"/>
-						</div>
+										<div class=\"alert alert-danger text-center\" role=\"alert\" style:\"text-align: center;\"><div>Se ha producido un error</div></div>
+				<div class=\"container m-5 mx-auto text-white\">
+					<form action=\"form_client.php\" method=\"post\">
+						<div class=\"row\">
+							<div class=\"col-4 offset-2\">
+								<div class=\"form-group\">
+									<label for=\"username\">Nom d'usuari (obligatori):</label>
+									<input type=\"text\" class=\"form-control\" name=\"username\" id=\"username\" value=\"$_POST[username]\"/>
+								</div>
+								<div class=\"form-group\">
+									<label for=\"pass\">Contrasenya (obligatori):</label>
+									<input type=\"password\" class=\"form-control\" name=\"pass\" id=\"pass\" value=\"$_POST[pass]\"/>
+								</div>
+								<div class=\"form-group\">
+									<label for=\"rp_pass\">Repeteix la contrasenya (obligatori):</label>
+									<input type=\"password\" class=\"form-control\" name=\"rp_pass\" id=\"rp_pass\" value=\"$_POST[rp_pass]\"/>
+								</div>
+								<div class=\"form-group\">
+									<label for=\"nombre\">Nom (obligatori):</label>
+									<input type=\"text\" class=\"form-control\" name=\"nombre\" id=\"nombre\" value=\"$_POST[nombre]\"/>
+								</div>
+								<div class=\"form-group\">
+									<label for=\"apellidos\">Cognoms (obligatori):</label>
+									<input type=\"text\" class=\"form-control\" name=\"apellidos\" id=\"apellidos\" value=\"$_POST[apellidos]\"/>
+								</div>
+								<div class=\"form-group\">
+									<label for=\"nif\">NIF (obligatori):</label>
+									<input type=\"text\" class=\"form-control\" name=\"nif\" id=\"nif\" value=\"$_POST[nif]\"/>
+								</div>
+							</div>
+							<div class=\"col-4\">
+								<div class=\"form-group\">
+									<label for=\"direccion\">Adreça (obligatori):</label>
+									<input type=\"text\" class=\"form-control\" name=\"direccion\" id=\"direccion\" value=\"$_POST[direccion]\"/>
+								</div>
 						<div class=\"form-group\">
 							<label for=\"codigo_postal\">Codi postal (obligatori):</label>
 							<input type=\"text\" class=\"form-control\" name=\"codigo_postal\" id=\"codigo_postal\" value=\"$_POST[codigo_postal]\"/>
@@ -186,8 +187,8 @@
 							</div>
 						</div>
 					</form>
-				</div>
-					<div class=\"alert alert-danger\">Se ha producido un error</div>";
+				</div>";
+					
 									}
 
 
