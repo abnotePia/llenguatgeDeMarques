@@ -12,6 +12,11 @@
 						<th></th>
 					</tr>
 					<?php
+						if (empty($_POST["codi"])==false) {
+							$codi = $_POST["codi"];
+							$sql = "DELETE FROM productes WHERE codi = '$codi'";
+							$result =$conn ->query($sql);
+						}
 					$sql = "SELECT productes.codi,productes.categoria,productes.nom,productes.preu,productes.imatge,categories.nom as cat FROM productes
 							inner join categories on categories.id_categoria =  productes.categoria";
 							
@@ -27,7 +32,7 @@
 							<td class=\"align-middle\">$row[cat]</td>
 							
 							<td class=\"align-middle\">
-								<form class=\"form-inline\" action=\"form_producte.php?codi=$row[codi]\" method=\"get\">
+								<form class=\"form-inline\" action=\"productes.php\" method=\"post\">
 								<a href=\"form_producte.php?codi=$row[codi]\" class=\"btn btn-primary\"><i class=\"fas fa-pencil-alt\"></i></a>
 								<div class=\"form-group\">
 									<input type=\"hidden\" name=\"codi\" value=\"$row[codi]\" />

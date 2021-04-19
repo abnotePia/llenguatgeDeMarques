@@ -1,3 +1,6 @@
+<?php
+include "config.php";
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -27,37 +30,48 @@
 					<li class="nav-item">
 						<a class="nav-link" href="index.php">Atenció al client</a>
 					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<?php
+					if (empty($_SESSION['user'])===false) {
+					$usuari = $_SESSION['user'];
+					echo "
+					<li class=\"nav-item dropdown\">
+						<a class=\"nav-link dropdown-toggle\" id=\"navbarDropdownMenuLink\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
 							Clients
 						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<a class="dropdown-item" href="form_client.php">Modificar les meves dades</a>
-							<a class="dropdown-item" href="tancar.php">Tarcar la sessió</a>
+						<div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
+							<a class=\"dropdown-item\" href=\"form_client.php\">Modificar les meves dades</a>
+							<a class=\"dropdown-item\" href=\"tancar.php\">Tarcar la sessió</a>
 						</div>
 					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<li class=\"nav-item dropdown\">
+						<a class=\"nav-link dropdown-toggle\" id=\"navbarDropdownMenuLink\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
 							Comandes
 						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<a class="dropdown-item" href="carrito.php">Veure el carrito</a>
-							<a class="dropdown-item" href="index.php">Historial de comandes</a>
+						<div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
+							<a class=\"dropdown-item\" href=\"carrito.php\">Veure el carrito</a>
+							<a class=\"dropdown-item\" href=\"index.php\">Historial de comandes</a>
 						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					</li>";
+					$sql = "SELECT nom_usuari FROM clients WHERE id_client = $usuari";
+					$result =$conn->query($sql);
+					$row = $result->fetch_assoc();
+					if ($row["nom_usuari"] == 'admin') {
+					echo "
+					<li class=\"nav-item dropdown\">
+						<a class=\"nav-link dropdown-toggle\" id=\"navbarDropdownMenuLink\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
 							Gestió de productes
 						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<a class="dropdown-item" href="form_producte.php">Nou producte</a>
-							<a class="dropdown-item" href="productes.php">Editar productes</a>
+						<div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
+							<a class=\"dropdown-item\" href=\"form_producte.php\">Nou producte</a>
+							<a class=\"dropdown-item\" href=\"productes.php\">Editar productes</a>
 						</div>
-					</li>
+					</li>";
+					}
+				}
+					?>
 				</ul>
 				<?php
 				if (empty($_SESSION['user'])==false) {
-					include "config.php";
 					$idusuari = $_SESSION['user'];
 					$sql = "SELECT nom,cognoms FROM clients WHERE id_client = $idusuari";
 					$result =$conn->query($sql);
