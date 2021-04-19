@@ -93,15 +93,12 @@
 								where codi='$codigo'";
 								$result =$conn->query($sql);
 								if ($result) {
-						echo "<div class=\"alert alert-success\" role=\"alert\">Producte actualitzat correctament</div>";
+									echo "<div class=\"alert alert-success\" role=\"alert\">Producte actualitzat correctament</div>";
+								}
+								else {
+									echo "<div class=\"alert alert-danger\" role=\"alert\">Error! No s'ha pogut actualitzar el producte</div>";
+								}
 						}
-						else {
-							echo "<div class=\"alert alert-danger\" role=\"alert\">Error! No s'ha pogut actualitzar el producte</div>";
-						}
-						}
-						
-
-						
 						echo "
 						<div class=\"row\">
 					<div class=\"col-4 offset-2\">
