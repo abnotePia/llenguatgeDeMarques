@@ -49,7 +49,6 @@ function eliminarProducte($pCodi) {
 
 function importProducte($pCodi) {
 	$import = 0;
-
 	$posicio = buscarProducte($pCodi);
 
 	if ($posicio != -1) {
