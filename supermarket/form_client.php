@@ -204,6 +204,7 @@
 		$poblacio=$_POST["poblacion"];
 		$telefon=$_POST["telefono"];
 		$email=$_POST["mail"];
+		
 		if (nomUsuariValid($_POST["username"]) || $_POST["username"]='admin') {
 			if ($_POST["pass"] == $_POST["rp_pass"]) {
 				if (seguretatContrasenya($_POST["pass"]) == 3) {
@@ -223,7 +224,8 @@
 							VALUES('$nombreusuario','$contra','$nom','$cognoms','$nif','$adreca','$codi',$poblacio,'$telefon','$email')";
 							$result =$conn->query($sql);
 						}
-						header("Location: entrar.php");
+						if ($result) {header("Location: entrar.php");}
+						else {$incorrecte = true;}
 					}
 				}
 			}
