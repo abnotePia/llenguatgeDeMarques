@@ -2,6 +2,7 @@
 	require "header.php";
 	include "config.php";
 	include "common/validacions.php";
+	include "mensajeserrors.php";
 ?>
 	<?php
 	if (empty($_SESSION['user'])==false) {
@@ -17,8 +18,8 @@
 		$telefon=$_POST["telefono"];
 		$email=$_POST["mail"];
 		if (empty($_POST)==false) {
+			if (empty($adreca)==false && empty($codi)==false) {
 			if (nomUsuariValid($_POST["username"])) {
-			
 				if ($_POST["pass"] == $_POST["rp_pass"]) {
 					if (seguretatContrasenya($_POST["pass"]) == 3) {
 						if (NIFValid($_POST["nif"])) {
@@ -40,6 +41,7 @@
 					}
 				}
 			}
+		}
 		}
 		$sql = "SELECT * FROM clients where id_client='$client'";
 		$result =$conn ->query($sql);
@@ -204,31 +206,40 @@
 		$poblacio=$_POST["poblacion"];
 		$telefon=$_POST["telefono"];
 		$email=$_POST["mail"];
-		if (nomUsuariValid($_POST["username"]) || $_POST["username"]='admin') {
-			if ($_POST["pass"] == $_POST["rp_pass"]) {
-				if (seguretatContrasenya($_POST["pass"]) == 3) {
-					if (NIFValid($_POST["nif"])) {
-						$incorrecte=false;
-						if (empty($_POST["mail"]) == false) {
-							$incorrecte=true;
-							if (esEmail($_POST["mail"])) {
-								$incorrecte=false;
+
+		
+		if ($nom !== '' && $cognoms!=='' && $adreca !== '' && $codi !== '' && $poblacio !=null && $nombreusuario !== '' ) {
+			if (nomUsuariValid($_POST["username"]) || $_POST["username"] == "admin") {
+				if ($_POST["pass"] == $_POST["rp_pass"]) {
+					if (seguretatContrasenya($_POST["pass"]) == 3) {
+						if (NIFValid($_POST["nif"])) {
+							
+							$incorrecte=false;
+							if (empty($_POST["mail"]) == false) {
+								$incorrecte=true;
+								if (esEmail($_POST["mail"])) {
+									$incorrecte=false;
+									$sql = "INSERT INTO clients (nom_usuari, contrasenya, nom, cognoms, nif, adreca, codi_postal, poblacio, telefon, email)
+									VALUES('$nombreusuario','$contra','$nom','$cognoms','$nif','$adreca','$codi',$poblacio,'$telefon','$email')";
+									$result =$conn->query($sql);
+								}
+							}
+							else {
 								$sql = "INSERT INTO clients (nom_usuari, contrasenya, nom, cognoms, nif, adreca, codi_postal, poblacio, telefon, email)
 								VALUES('$nombreusuario','$contra','$nom','$cognoms','$nif','$adreca','$codi',$poblacio,'$telefon','$email')";
 								$result =$conn->query($sql);
+								$e = $conn->error;
 							}
+						if ($result) {header("Location: entrar.php");}
+						else {$incorrecte = true;}
 						}
-						else {
-							$sql = "INSERT INTO clients (nom_usuari, contrasenya, nom, cognoms, nif, adreca, codi_postal, poblacio, telefon, email)
-							VALUES('$nombreusuario','$contra','$nom','$cognoms','$nif','$adreca','$codi',$poblacio,'$telefon','$email')";
-							$result =$conn->query($sql);
-						}
-						header("Location: entrar.php");
 					}
 				}
 			}
 		}
 		if ($incorrecte) {
+			$error = array();
+			$error = mensajeError($nombreusuario,$e,$adreca,$codi,$poblacio,$nom,$cognoms);
 			echo "
 				<div class=\"alert alert-danger text-center\" role=\"alert\" style:\"text-align: center;\"><div>Se ha producido un error</div></div>
 					<div class=\"container m-5 mx-auto text-white\">
@@ -237,48 +248,62 @@
 								<div class=\"col-4 offset-2\">
 									<div class=\"form-group\">
 										<label for=\"username\">Nom d'usuari (obligatori):</label>
-										<input type=\"text\" class=\"form-control\" name=\"username\" id=\"username\" value=\"$_POST[username]\"/>
+										<label class=\"alert alert-danger \" style=\"font-size:x-small;margin:0;padding:0\">$error[4]</label>
+										<input type=\"text\" class=\"form-control\" name=\"username\" id=\"username\" value=\"$nombreusuario\"/>
 									</div>
 									<div class=\"form-group\">
 										<label for=\"pass\">Contrasenya (obligatori):</label>
+										<label class=\"alert alert-danger \" style=\"font-size:x-small;margin:0;padding:0\">$error[1]</label>
 										<input type=\"password\" class=\"form-control\" name=\"pass\" id=\"pass\" value=\"$_POST[pass]\"/>
 									</div>
 									<div class=\"form-group\">
 										<label for=\"rp_pass\">Repeteix la contrasenya (obligatori):</label>
+										<label class=\"alert alert-danger \" style=\"font-size:x-small;margin:0;padding:0\">$error[0]</label>
 										<input type=\"password\" class=\"form-control\" name=\"rp_pass\" id=\"rp_pass\" value=\"$_POST[rp_pass]\"/>
 									</div>
 									<div class=\"form-group\">
 										<label for=\"nombre\">Nom (obligatori):</label>
+										<label class=\"alert alert-danger \" style=\"font-size:x-small;margin:0;padding:0\">$error[8]</label>
 										<input type=\"text\" class=\"form-control\" name=\"nombre\" id=\"nombre\" value=\"$_POST[nombre]\"/>
 									</div>
 									<div class=\"form-group\">
 										<label for=\"apellidos\">Cognoms (obligatori):</label>
+										<label class=\"alert alert-danger \" style=\"font-size:x-small;margin:0;padding:0\">$error[9]</label>
 										<input type=\"text\" class=\"form-control\" name=\"apellidos\" id=\"apellidos\" value=\"$_POST[apellidos]\"/>
 									</div>
 									<div class=\"form-group\">
 										<label for=\"nif\">NIF (obligatori):</label>
+										<label class=\"alert alert-danger \" style=\"font-size:x-small;margin:0;padding:0\">$error[2]</label>
 										<input type=\"text\" class=\"form-control\" name=\"nif\" id=\"nif\" value=\"$_POST[nif]\"/>
 									</div>
 								</div>
 							<div class=\"col-4\">
 								<div class=\"form-group\">
 									<label for=\"direccion\">Adreça (obligatori):</label>
+									<label class=\"alert alert-danger \" style=\"font-size:x-small;margin:0;padding:0\">$error[5]</label>
 									<input type=\"text\" class=\"form-control\" name=\"direccion\" id=\"direccion\" value=\"$_POST[direccion]\"/>
 								</div>
 							<div class=\"form-group\">
 								<label for=\"codigo_postal\">Codi postal (obligatori):</label>
+								<label class=\"alert alert-danger \" style=\"font-size:x-small;margin:0;padding:0\">$error[6]</label>
 								<input type=\"text\" class=\"form-control\" name=\"codigo_postal\" id=\"codigo_postal\" value=\"$_POST[codigo_postal]\"/>
 							</div>
 							<div class=\"form-group\">
 								<label for=\"poblacion\">Població (obligatori):</label>
+								<label class=\"alert alert-danger \" style=\"font-size:x-small;margin:0;padding:0\">$error[7]</label>
 								<select class=\"form-control\" name=\"poblacion\" id=\"poblacion\" value=\"$_POST[poblacion]\">
 									<option value=\"\">Selecciona una opció</option>";
 								$sql = "SELECT id_poblacio,nom FROM poblacions order by nom";
 								$result =$conn ->query($sql);
-								$row = $result->fetch_assoc();
-								while ($row) {
-								echo "<option value=\"$row[id_poblacio]\">$row[nom]</option>";
-								$row = $result->fetch_assoc();	
+								$row2 = $result->fetch_assoc();
+								while ($row2) {
+									if ($row2["id_poblacio"] == $poblacio) {
+										echo "<option selected value=\"$row2[id_poblacio]\">$row2[nom]</option>";
+									}
+									else {
+								echo "<option value=\"$row2[id_poblacio]\">$row2[nom]</option>";
+								}
+								$row2 = $result->fetch_assoc();	
 								}
 								echo "
 								</select>
