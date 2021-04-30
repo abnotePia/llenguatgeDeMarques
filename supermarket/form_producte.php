@@ -66,16 +66,26 @@
 					}
 					else if (empty($_POST)==false) {
 						$correcte = true;
+						$cont = 0;
 						$codigo = $_POST["codi"];
 						$nombre = strval($_POST["codi"]).".".substr($destination_path,-3);
 						foreach ($_POST as $nombre) {
-							if (strlen($nombre) == 0 || strlen($nombre)<8) {
+							if (strlen($nombre)<8 && $cont == 0) {
 								$sql = "SELECT imatge FROM productes where codi = '$codi'";
 								$result =$conn->query($sql);
 								$row = $result->fetch_assoc();
-								$nombre = 
+								$nombre = $row["imatge"];
 								$correcte = false;
+								
 							}
+							if (strlen($nombre) == 0 && $cont != 0) {
+								$sql = "SELECT imatge FROM productes where codi = '$codi'";
+								$result =$conn->query($sql);
+								$row = $result->fetch_assoc();
+								$nombre = $row["imatge"];
+								$correcte = false;
+								}
+							$cont++;
 						}
 						$destination_path ="images/productes/".$_FILES['imatge']['name'];
 						$categoria = $_POST["categoria"];
