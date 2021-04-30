@@ -49,7 +49,7 @@ include "config.php";
 						</a>
 						<div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
 							<a class=\"dropdown-item\" href=\"carrito.php\">Veure el carrito</a>
-							<a class=\"dropdown-item\" href=\"index.php\">Historial de comandes</a>
+							<a class=\"dropdown-item\" href=\"historialcomandes.php\">Historial de comandes</a>
 						</div>
 					</li>";
 					$sql = "SELECT nom_usuari FROM clients WHERE id_client = $usuari";

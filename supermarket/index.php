@@ -1,5 +1,8 @@
 <?php
 	require "header.php";
+	if(empty($_POST)==false) {
+	
+	}
 ?>
 		<div class="container m-5 mx-auto">
 			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
