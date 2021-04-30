@@ -65,28 +65,37 @@
 				</div>";
 					}
 					else if (empty($_POST)==false) {
-						$destination_path ="images/productes/".$_FILES['imatge']['name']; 
-						$nombre = strval($_POST["codi"]).".".substr($destination_path,-3);
+						$correcte = true;
 						$codigo = $_POST["codi"];
+						$nombre = strval($_POST["codi"]).".".substr($destination_path,-3);
+						foreach ($_POST as $nombre) {
+							if (strlen($nombre) == 0 || strlen($nombre)<8) {
+								$sql = "SELECT imatge FROM productes where codi = '$codi'";
+								$result =$conn->query($sql);
+								$row = $result->fetch_assoc();
+								$nombre = 
+								$correcte = false;
+							}
+						}
+						$destination_path ="images/productes/".$_FILES['imatge']['name'];
 						$categoria = $_POST["categoria"];
 						$nombreProducto = $_POST["nom"];
 						$precio = $_POST["preu"];
 						$unistock = $_POST["stock"];
+						if ($correcte) {
 						move_uploaded_file($_FILES['imatge']['tmp_name'],$destination_path);
-						rename($destination_path,"images/productes/".$nombre);
+						rename($destination_path,"images/productes/".$nombre);}
 						if (empty($_POST["actualitzar"])) {
-							echo "HOLA";
-						
 						$sql = "INSERT INTO productes (codi, categoria, nom, preu, unitats_stock, imatge) VALUES ('$codigo', $categoria, '$nombreProducto',$precio,$unistock, 'images/productes/$nombre')";
-						$result =$conn->query($sql);
-						if ($result) {
-							echo "<div class=\"alert alert-success\" role=\"alert\">Producte inserit correctament</div>";
+						if ($correcte) {
+						$result =$conn->query($sql);	
+						echo "<div class=\"alert alert-success\" role=\"alert\">Producte inserit correctament</div>";
 						}
 						else {
 							echo "<div class=\"alert alert-danger\" role=\"alert\">Error! No s'ha pogut inserir el producte</div>";
 						}
 						}
-						else {
+						else if ($correcte){
 							//,categoria=$categoria,nom='$nombreProducto',preu=$precio,unitats_stock=$unistock,imatge='images/productes/$nombre'
 						$sql = "UPDATE productes
 								set codi='$codigo',nom='$nombreProducto',preu=$precio,unitats_stock=$unistock,imatge='images/productes/$nombre',categoria=$categoria

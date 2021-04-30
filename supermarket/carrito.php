@@ -60,7 +60,9 @@
 				</table>
 				<div class="text-right">
 					<a href="comprar.php" class="btn btn-outline-secondary mx-2">Afegir més productes</a>
-					<a href="index.php" class="btn btn-secondary">Finalitzar la compra</a>
+					<form method="post" action="index.php">
+					<button type ="sumbit" name ="boton" class="btn btn-secondary">Finalitzar la compra</button>
+					</form>
 				</div>
 			</div>
 		</div>
